@@ -1,9 +1,10 @@
 import React from "react";
 import Products from "@/components/products/Products";
+import Box from "@mui/material/Box";
 import { getProductsByCategory } from "@/lib/store-api-utils";
 const HomePage = (props) => {
   return (
-    <div>
+    <div id='home' style={{width:'100vw'}} >
       <Products products={props.products} />
     </div>
   );

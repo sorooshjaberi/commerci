@@ -9,12 +9,14 @@ const CategorySlider = ({ categoryItems: data,imageUrl }) => {
       direction="row"
       alignItems="center"
       sx={{
-        width: "80%",
+        width: "100%",
         mx: "auto",
         overflowX: "scroll",
         bgcolor: "primary.light",
         height: "auto",
-        p: 2,
+        p: 3,
+        my:1,
+        borderRadius:1
       }}
     >
       <CategoryData data={data[1].category} imageUrl={imageUrl} />
