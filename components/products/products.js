@@ -5,7 +5,7 @@ const Products = ({ products }) => {
   return (
     <Box
       sx={{
-        bgcolor: "grey.800",
+        bgcolor: "#fafafa",
         pt: 5,
         width:'100vw',px:2
       }}

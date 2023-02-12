@@ -2,7 +2,10 @@ import React from "react";
 import { getProductsByCategory } from "@/lib/store-api-utils";
 import ProductDetail from "@/components/ProductDetail";
 const ProductItem = ({ productDetail }) => {
-  return <ProductDetail ProductDetail={productDetail} />;
+  return <div style={{
+  }}>
+    <ProductDetail productDetail={productDetail} />
+  </div>;
 };
 
 export default ProductItem;
