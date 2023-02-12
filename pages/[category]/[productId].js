@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import { getProductsByCategory } from "@/lib/store-api-utils";
+import ProductDetail from "@/components/ProductDetail";
+const ProductItem = ({ productDetail }) => {
+  return <ProductDetail ProductDetail={productDetail} />;
+};
 
-const ProductItem = () => {
-  return (
-    <div>ProductItem</div>
-  )
+export default ProductItem;
+export async function getStaticProps(context) {
+  const allData = await getProductsByCategory();
+
+  const { params } = context;
+  const { category, productId } = params;
+
+  const productDetail = allData[category - 1].find((product) => {
+    return product.id == productId;
+  });
+  console.log(productDetail);
+  return {
+    props: { productDetail },
+  };
 }
-
-export default ProductItem
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
