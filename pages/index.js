@@ -1,19 +1,22 @@
-import React from 'react'
-import Products from '@/components/products/products';
+import React from "react";
+import Products from "@/components/products/Products";
+import { getProductsByCategory } from "@/lib/store-api-utils";
+import Image from "next/image";
 const HomePage = (props) => {
-  console.log(props.products);
+  // console.log(props.products);
   return (
-    <div>HomePage</div>
-  )
-}
+    <div>
+      <Products products={props.products} />
+    </div>
+  );
+};
 
-export default HomePage
-export async function getStaticProps(){
-  const response = await fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=20');
-  const json = await response.json();
+export default HomePage;
+export async function getStaticProps(context) {
+  const results = await getProductsByCategory();
   return {
-    props:{
-      products:json
-    }
-  }
+    props: {
+      products: results,
+    },
+  };
 }

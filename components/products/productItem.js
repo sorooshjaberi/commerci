@@ -1,9 +1,22 @@
-import React from 'react'
-
-const productItem = () => {
+import React, { useEffect } from "react";
+import Card from "@mui/material/Card";
+import Image from "next/image";
+const ProductItem = ({ data }) => {
+  // useEffect(() => {
+  //   // console.log(data.image);
+  // }, []);
   return (
-    <div>productItem</div>
-  )
-}
+    <Card
+      sx={{
+        minWidth: "12rem",
+        height: "15rem",
+        p: 1,
+      }}
+    >
+      {/* <Image src={data.image} /> */}
+      {/* {JSON.stringify(data)} */}
+    </Card>
+  );
+};
 
-export default productItem
+export default ProductItem;
