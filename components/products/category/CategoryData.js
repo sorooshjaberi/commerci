@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 
-const CategoryData = ({ data , imageUrl }) => {
+const CategoryData = ({ data, imageUrl }) => {
   console.log(data);
 
   return (
@@ -15,7 +15,7 @@ const CategoryData = ({ data , imageUrl }) => {
         justifyContent: "space-evenly",
         alignItems: "center",
         flexDirection: "column",
-        marginX:1
+        marginX: 1,
       }}
     >
       <Image
@@ -24,13 +24,13 @@ const CategoryData = ({ data , imageUrl }) => {
           height: "8rem",
         }}
         alt="a"
-        src={imageUrl||data.image}
+        src={imageUrl || data.image}
         width={500}
         height={500}
       />
-      <caption>
+      <div>
         <Typography variant="body1">{data.name}</Typography>
-      </caption>
+      </div>
     </Box>
   );
 };

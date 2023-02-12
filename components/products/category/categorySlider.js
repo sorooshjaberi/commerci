@@ -11,7 +11,7 @@ const CategorySlider = ({ categoryItems: data,imageUrl }) => {
       sx={{
         width: "80%",
         mx: "auto",
-        overflow: "scroll",
+        overflowX: "scroll",
         bgcolor: "primary.light",
         height: "auto",
         p: 2,

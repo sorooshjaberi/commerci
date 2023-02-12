@@ -2,7 +2,7 @@ import React from "react";
 import CategorySlider from "./category/categorySlider";
 const Products = ({ products }) => {
   return (
-    <div>
+    <div >
       <div>
         <CategorySlider categoryItems={products[0]} imageUrl="/clothes.webp" />
       </div>

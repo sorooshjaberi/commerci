@@ -93,7 +93,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    background-color: #111;
 }
+
 
 a {
   color: inherit;
@@ -104,4 +106,23 @@ a {
   html {
     color-scheme: dark;
   }
+}
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(91, 91, 91, 0.3);
+  border-radius: 10px;
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar
+{
+	width: 0px;
+  height: 0px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #565656;
+  border-radius: 4px;
 }
