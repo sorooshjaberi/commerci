@@ -69,13 +69,13 @@ const ProductSlider = ({ productDetail }) => {
   return (
     <Box
       sx={{
-        width: { md: "40vw" },
-        height: { md: "40vw" },
+        width: { md: "40rem" },
+        height: { md: "40rem " },
         display: "flex",
         textAlign: "center",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "flex-start",
         bgcolor: "#fafafa",
         p: 2,
       }}

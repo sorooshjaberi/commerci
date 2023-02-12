@@ -10,8 +10,8 @@ const CategoryData = ({ data, imageUrl }) => {
   return (
     <Box
       sx={{
-        width: "8rem",
-        height: "8rem",
+        width: "12.8rem",
+        height: "12.8rem",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -22,7 +22,7 @@ const CategoryData = ({ data, imageUrl }) => {
       <Typography
         color="primary.contrastText"
         textAlign={"center"}
-        variant="h6"
+        variant="h4"
       >
         {data.name}
       </Typography>
@@ -34,8 +34,8 @@ const CategoryData = ({ data, imageUrl }) => {
       >
         <Image
           style={{
-            width: "8rem",
-            height: "8rem",
+            width: "12.8rem",
+            height: "12.8rem",
           }}
           alt="a"
           src={imageUrl || data.image}
@@ -52,7 +52,7 @@ const CategoryData = ({ data, imageUrl }) => {
         }}
         color="grey.300"
         textAlign={"center"}
-        variant="subtitle1"
+        variant="h5"
       >
         <Link href={"/"}>See more &rArr;</Link>
       </Typography>

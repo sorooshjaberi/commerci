@@ -2,9 +2,10 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import ProductSlider from "./ProductSlider";
-import { Typography,Paper } from "@mui/material";
+import { Typography, Paper } from "@mui/material";
 
 const ProductDetail = ({ productDetail }) => {
+  const centerStyle = {};
   console.log(productDetail);
   return (
     <div id="aaaaaaaaa">
@@ -13,29 +14,56 @@ const ProductDetail = ({ productDetail }) => {
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "start",
-          p:2
+          p: 2,
         }}
       >
         <Paper>
-        <ProductSlider productDetail={productDetail} />
+          <ProductSlider productDetail={productDetail} />
         </Paper>
-        <Paper sx={{
-          bgcolor:'#fafafa',
-          height:'80vh',
-          ml:2
-          ,
-          width:'100%'
-,p:2
-        }} >
-            <Typography>
+        <Paper
+          sx={{
+            bgcolor: "#fafafa",
+            height: "40rem",
+            ml: 2,
+            width: "100%",
+            p: 2,
+          }}
+        >
+          <Box
+            minHeight="70%"
+            display="flex"
+            flexDirection="column"
+            // justifyContent="space-between"
+          >
+            <Typography variant="h1" component='h1' fontWeight="bold" mb={5}>
               {productDetail.title}
             </Typography>
-            <Typography>
-              {productDetail.description}
-            </Typography>
-            <Typography>
-              {productDetail.price}
-            </Typography>
+            <Typography component="h3" fontSize='3rem' mb={5}>{productDetail.description}</Typography>
+            <Typography variant="h1">${productDetail.price}</Typography>
+          </Box>
+        </Paper>
+        <Paper
+          sx={{
+            width: { md: "60rem" },
+            bgcolor: "#fafafa",
+            height: "40rem",
+            ml: 2,
+            p: 2,
+            position:'relative'
+          }}
+        >
+          <Typography
+            fontWeight={"bold"}
+            fontSize="4rem"
+            sx={{
+              translate: "-50% -50%",
+              position:"absolute",
+              top: "50%",
+              left: "50%",
+            }}
+          >
+            Comments...
+          </Typography>
         </Paper>
       </Box>
     </div>

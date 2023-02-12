@@ -10,8 +10,8 @@ const ProductItem = ({ data }) => {
     <Link href={`/${data.category.id}/${data.id}`}>
       <Card
         sx={{
-          minWidth: "14rem",
-          height: "18rem",
+          minWidth: "22.4rem",
+          height: "28.8rem",
           p: 1,
           display: "flex",
           flexDirection: "column",
@@ -27,7 +27,7 @@ const ProductItem = ({ data }) => {
       >
         <Box
           sx={{
-            borderRadius: "5rem",
+            borderRadius: "8rem",
             overflow: "hidden",
             boxShadow: 1,
           }}
@@ -38,8 +38,8 @@ const ProductItem = ({ data }) => {
             alt={data.title}
             style={{
               transition: "all ease .5s",
-              height: "10rem",
-              width: "10rem",
+              height: "16rem",
+              width: "16rem",
               translate: "0 3px",
               scale: "1.2",
             }}
@@ -56,10 +56,10 @@ const ProductItem = ({ data }) => {
             alignItems: "center",
           }}
         >
-          <Typography variant="body1" textAlign={"center"} mb={3}>
+          <Typography variant="h5" textAlign={"center"} mb={3}>
             {data.title}
           </Typography>
-          <Typography variant="body1" mb={1}>
+          <Typography variant="h6" mb={1}>
             ${data.price}
           </Typography>
         </Box>
