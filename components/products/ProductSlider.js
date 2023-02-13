@@ -1,11 +1,24 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+// import Button from "@mui/material/Button";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const ProductSlider = ({ productDetail }) => {
+  // const swiper = useSwiper();
+  // const slide = useSwiperSlide();
   const images = productDetail.images.map((imageUrl) => {
     console.log(imageUrl);
     return (
@@ -66,6 +79,31 @@ const ProductSlider = ({ productDetail }) => {
       </SwiperSlide>
     );
   });
+  // const controllers = (
+  //   <Box
+  //     sx={{
+  //       width: "10rem",
+  //       display: "flex",
+  //       alignItems: "center",
+  //       justifyContent: "space-between",
+  //       mt: "-3.5rem",
+  //       zIndex: 10,
+  //     }}
+  //   >
+  //     <Button
+
+  //       sx={{ borderRadius: "2rem ", minWidth: "3rem ", minHeight: "3rem" ,zIndex:100}}
+  //     >
+  //       <ArrowBackIosIcon />
+  //     </Button>
+  //     <Button
+  //       sx={{ borderRadius: "2rem ", minWidth: "3rem ", minHeight: "3rem" }}
+  //       >
+  //       <ArrowForwardIosIcon />
+  //     </Button>
+  //   </Box>
+  // );
+  
   return (
     <Box
       sx={{
@@ -84,8 +122,16 @@ const ProductSlider = ({ productDetail }) => {
         style={{ margin: "auto", width: "100%" }}
         spaceBetween={1}
         slidesPerView={1}
+        cssMode={true}
+        navigation={true}
+        pagination={true}
+        mousewheel={true}
+        keyboard={true}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       >
+
         {imageSlides}
+      {/* {controllers} */}
       </Swiper>
       <Box
         sx={{

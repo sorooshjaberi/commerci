@@ -27,20 +27,20 @@ const ProductDetail = ({ productDetail }) => {
             height: "100%",
             ml: 2,
             width: "100%",
-            p: 2,
+            px: 2,
+            pt:1
           }}
         >
           <Box
             minHeight="70%"
             display="flex"
             flexDirection="column"
-            // justifyContent="space-between"
           >
             <Typography variant="h1" component='h1' fontWeight="bold" mb={5}>
               {productDetail.title}
             </Typography>
             <Typography component="h3" fontSize='3rem' mb={5}>{productDetail.description}</Typography>
-            <Typography variant="h1">${productDetail.price}</Typography>
+            <Typography pb='1rem' variant="h1">${productDetail.price}</Typography>
           </Box>
         </Paper>
         <Paper
