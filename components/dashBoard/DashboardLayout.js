@@ -3,7 +3,9 @@ import React from "react";
 import TabDetails from "./TabDetails";
 import UserData from "./UserData";
 import SideBar from "./SideBar";
+import TabPanel from "./TabPanel";
 const DashboadrLayout = () => {
+  
   return (
     <Stack
       spacing={2}

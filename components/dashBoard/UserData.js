@@ -1,5 +1,4 @@
 import { Avatar, Box, Button, Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
 const UserData = () => {
   const spaceBetweenFlex = {
     display: "flex",
@@ -26,12 +25,9 @@ const UserData = () => {
             <Typography mb={0.5} variant="h6">
               Soroush Jaberi
             </Typography>
-            <Typography variant="body1">09028454710</Typography>
+            <Typography variant="body1">09123456789</Typography>
           </Box>
         </Box>
-        <Button>
-          <EditIcon />
-        </Button>
       </Box>
     </Box>
   );
