@@ -21,7 +21,7 @@ const Tabs = () => {
       >
         <Tab label="Saved" />
         <Tab label="History" />
-        <Tab label="Edit Information" />
+        <Tab label="Edit Information" disabled    />
       </TabS>
     </Box>
   );

@@ -11,6 +11,7 @@ const NavBar = () => {
     flexDirection: "row",
     px: "2rem",
     py: 1,
+    justifyContent:'space-between'
   };
   return (
     <AppBar sx={appBarStyles}>

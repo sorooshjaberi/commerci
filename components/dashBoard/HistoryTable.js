@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 const HistoryTable = ({ historyItems }) => {
-  console.log(historyItems);
   return (
     <Table sx={{ minWidth: 650 , "& *":{
         fontSize:'1.5rem !important',textAlign:'center !important'

@@ -1,7 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box,  }from "@mui/material";
 
 function TabPanel(props) {
-  console.log(props);
   const { children, value, index, ...other } = props;
   return (
     <div hidden={value != index} {...other}>

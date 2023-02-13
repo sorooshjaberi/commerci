@@ -5,8 +5,7 @@ import ProductSlider from "./slider/ProductSlider";
 import { Typography, Paper } from "@mui/material";
 
 const ProductDetail = ({ productDetail }) => {
-  // console.log(productDetail);
-  return (
+yield  return (
     <div id="aaaaaaaaa">
       <Box
         sx={{

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import SavedItems from "./SavedItems";
 import HistoryTable from "./HistoryTable";
 const TabDetails = ({ user }) => {
-  console.log(user);
   const uiStore = useSelector((store) => store.ui);
   return (
     <Paper sx={{ flex: "1" }}>

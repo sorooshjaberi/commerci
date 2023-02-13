@@ -18,7 +18,6 @@ export async function getStaticProps(context) {
   const productDetail = allData[category - 1].find((product) => {
     return product.id == productId;
   });
-  // console.log(productDetail);
   return {
     props: { productDetail },
   };
