@@ -5,7 +5,7 @@ import ProductSlider from "./slider/ProductSlider";
 import { Typography, Paper } from "@mui/material";
 
 const ProductDetail = ({ productDetail }) => {
-yield  return (
+  return (
     <div id="aaaaaaaaa">
       <Box
         sx={{
@@ -13,10 +13,10 @@ yield  return (
           justifyContent: "flex-start",
           alignItems: "start",
           p: 2,
-          height:'40rem'
+          height: "40rem",
         }}
       >
-        <Paper sx={{height:'100%'}}>
+        <Paper sx={{ height: "100%" }}>
           <ProductSlider productDetail={productDetail} />
         </Paper>
         <Paper
@@ -26,19 +26,19 @@ yield  return (
             ml: 2,
             width: "100%",
             px: 2,
-            pt:1
+            pt: 1,
           }}
         >
-          <Box
-            minHeight="70%"
-            display="flex"
-            flexDirection="column"
-          >
-            <Typography variant="h1" component='h1' fontWeight="bold" mb={5}>
+          <Box minHeight="70%" display="flex" flexDirection="column">
+            <Typography variant="h1" component="h1" fontWeight="bold" mb={5}>
               {productDetail.title}
             </Typography>
-            <Typography component="h3" fontSize='3rem' mb={5}>{productDetail.description}</Typography>
-            <Typography pb='1rem' variant="h1">${productDetail.price}</Typography>
+            <Typography component="h3" fontSize="3rem" mb={5}>
+              {productDetail.description}
+            </Typography>
+            <Typography pb="1rem" variant="h1">
+              ${productDetail.price}
+            </Typography>
           </Box>
         </Paper>
         <Paper
@@ -48,7 +48,7 @@ yield  return (
             height: "100%",
             ml: 2,
             p: 2,
-            position:'relative'
+            position: "relative",
           }}
         >
           <Typography
@@ -56,7 +56,7 @@ yield  return (
             fontSize="4rem"
             sx={{
               translate: "-50% -50%",
-              position:"absolute",
+              position: "absolute",
               top: "50%",
               left: "50%",
             }}

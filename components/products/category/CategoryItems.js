@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "../ProductItem";
+import ProductItem from "../productItems/ProductItem";
 import Stack from "@mui/material/Stack";
 
 const CategoryItems = ({ data }) => {

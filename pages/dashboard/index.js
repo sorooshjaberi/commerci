@@ -11,6 +11,7 @@ export async function getServerSideProps({ req, res }) {
   const userData = await getUserData();
   const savedProductsData = await getProductById(userData.saved);
   const boughtProductsData = userData.history;
+  const cartItemsData = await getProductById(userData.cart);
   if (true) {
     return {
       props: {
@@ -20,6 +21,7 @@ export async function getServerSideProps({ req, res }) {
           firstName: userData.name,
           lastName: userData.lastName,
           wallet: userData.wallet,
+          cartProducts:cartItemsData
         },
       },
     };
