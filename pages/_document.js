@@ -3,7 +3,7 @@ export default function Doc() {
   return (
     <Html>
       <Head />
-      <body style={{margin:0,}}>
+      <body style={{margin:0,marginTop:'8rem'}}>
         <Main />
         <NextScript />
       </body>
