@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 const ProductItem = ({ data }) => {
-  console.log(data);
-  console.log(data.category.id, data.id);
+  // console.log(data);
+  // console.log(data.category.id, data.id);
   return (
     <Link href={`/${data.category.id}/${data.id}`}>
       <Card

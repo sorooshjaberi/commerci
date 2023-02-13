@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
 const CategoryData = ({ data, imageUrl }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <Box

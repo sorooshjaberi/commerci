@@ -5,8 +5,7 @@ import ProductSlider from "./slider/ProductSlider";
 import { Typography, Paper } from "@mui/material";
 
 const ProductDetail = ({ productDetail }) => {
-  const centerStyle = {};
-  console.log(productDetail);
+  // console.log(productDetail);
   return (
     <div id="aaaaaaaaa">
       <Box
