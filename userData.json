@@ -2,6 +2,14 @@
   "name": "Soroush",
   "lastName": "Jaberi",
   "wallet": 100,
-  "saved": [1],
-  "history": [{ "time": "2020-3-5", "id": 2, "amount": 1 }]
+  "saved": [1, 2, 5, 4, 6],
+  "history": [
+    {
+      "time": "2020-3-5",
+      "name": "new title",
+      "link": "/1/1",
+      "price": 10000,
+      "amount": 1
+    }
+  ]
 }
