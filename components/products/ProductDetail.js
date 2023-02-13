@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import ProductSlider from "./ProductSlider";
+import ProductSlider from "./slider/ProductSlider";
 import { Typography, Paper } from "@mui/material";
 
 const ProductDetail = ({ productDetail }) => {
