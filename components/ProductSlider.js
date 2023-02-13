@@ -70,7 +70,7 @@ const ProductSlider = ({ productDetail }) => {
     <Box
       sx={{
         width: { md: "40rem" },
-        height: { md: "40rem " },
+        height: { md: "100% " },
         display: "flex",
         textAlign: "center",
         flexDirection: "column",

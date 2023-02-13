@@ -15,15 +15,16 @@ const ProductDetail = ({ productDetail }) => {
           justifyContent: "flex-start",
           alignItems: "start",
           p: 2,
+          height:'40rem'
         }}
       >
-        <Paper>
+        <Paper sx={{height:'100%'}}>
           <ProductSlider productDetail={productDetail} />
         </Paper>
         <Paper
           sx={{
             bgcolor: "#fafafa",
-            height: "40rem",
+            height: "100%",
             ml: 2,
             width: "100%",
             p: 2,
@@ -46,7 +47,7 @@ const ProductDetail = ({ productDetail }) => {
           sx={{
             width: { md: "60rem" },
             bgcolor: "#fafafa",
-            height: "40rem",
+            height: "100%",
             ml: 2,
             p: 2,
             position:'relative'
