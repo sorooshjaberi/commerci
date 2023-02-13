@@ -6,13 +6,15 @@ import SavedItems from "./SavedItems";
 import HistoryTable from "./HistoryTable";
 const TabDetails = ({ user }) => {
   const uiStore = useSelector((store) => store.ui);
+  const userStore = useSelector((store) => store.user);
+  console.log(userStore);
   return (
     <Paper sx={{ flex: "1" }}>
       <TabPanel index={0} value={+uiStore.dashboardTabIndex}>
-        <SavedItems savedItems={user.savedProducts} />
+        <SavedItems savedItems={userStore.saved} />
       </TabPanel>
       <TabPanel index={1} value={+uiStore.dashboardTabIndex}>
-        <HistoryTable historyItems={user.history}/>
+        <HistoryTable historyItems={userStore.userData.history} />
       </TabPanel>
       <TabPanel index={2} value={+uiStore.dashboardTabIndex}>
         Item 3

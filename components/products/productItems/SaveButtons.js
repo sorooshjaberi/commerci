@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
 import { Paper } from "@mui/material";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
-const SaveButtons = ({data}) => {
+const SaveButtons = ({ data }) => {
   const [isAdded, setIsAdded] = useState(false);
   const userStore = useSelector((store) => store.user.saved);
+  const added = !!userStore.find((savedItem) => savedItem.id == data.id);
+  useEffect(() => {
+    if (added) {
+      setIsAdded(true);
+    }
+  }, []);
   const dispatch = useDispatch();
   const addSavedHandler = (e) => {
     e.stopPropagation();
@@ -17,7 +23,6 @@ const SaveButtons = ({data}) => {
   const removeShoppingSavedHandler = (e) => {
     e.stopPropagation();
     dispatch(userAction.removeSavedData(data.id));
-    console.log(userStore);
     setIsAdded(false);
   };
 
@@ -38,7 +43,7 @@ const SaveButtons = ({data}) => {
   ) : (
     <Paper
       onClick={removeShoppingSavedHandler}
-      sx={{ ...controllersStyle, bgcolor: "success.light"  }}
+      sx={{ ...controllersStyle, bgcolor: "success.light" }}
     >
       <BookmarkRemoveIcon />
     </Paper>

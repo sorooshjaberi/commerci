@@ -2,7 +2,7 @@
   "name": "Soroush",
   "lastName": "Jaberi",
   "wallet": 100,
-  "saved": [1, 2, 5, 4, 6],
+  "saved": [1, 2],
   "history": [
     {
       "time": "2020-3-5",
@@ -12,5 +12,5 @@
       "amount": 1
     }
   ],
-  "cart": [1]
+  "cart": []
 }

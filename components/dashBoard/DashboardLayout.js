@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import TabDetails from "./TabDetails";
 import UserData from "./UserData";
 import SideBar from "./SideBar";
@@ -7,8 +7,17 @@ import TabPanel from "./TabPanel";
 import { userAction } from "@/store/user";
 import { useDispatch, useSelector } from "react-redux";
 const DashboadrLayout = ({ user }) => {
+  const userStore = useSelector((store) => store.user);
+  const { firstName, lastName, wallet, savedProducts, cartProducts, history } =
+    user;
   const dispatch = useDispatch();
-  dispatch(userAction.setUserData(user));
+  useEffect(() => {
+    if (userStore.firstTime) return;
+    dispatch(userAction.setUserData({ firstName, lastName, wallet, history }));
+    dispatch(userAction.createCartData(cartProducts));
+    dispatch(userAction.createSavedData(savedProducts));
+    dispatch(userAction.firstTimeDone());
+  }, []);
   return (
     <Stack
       spacing={2}

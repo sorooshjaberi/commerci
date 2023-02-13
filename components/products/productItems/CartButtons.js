@@ -1,13 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
-import { Paper,} from "@mui/material";
+import { Paper } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 const CartButtons = ({ data }) => {
   const [isAdded, setIsAdded] = useState(false);
   const userStore = useSelector((store) => store.user.cart);
+  const added = !!userStore.find((savedItem) => savedItem.id == data.id);
+  useEffect(() => {
+    if (added) {
+      setIsAdded(true);
+    }
+  }, []);
   const dispatch = useDispatch();
   const addShoppingCartHandler = (e) => {
     e.stopPropagation();
@@ -33,7 +39,7 @@ const CartButtons = ({ data }) => {
   const cartController = !isAdded ? (
     <Paper
       onClick={addShoppingCartHandler}
-      sx={{ ...controllersStyle, bgcolor:"grey.400" }}
+      sx={{ ...controllersStyle, bgcolor: "grey.400" }}
     >
       <AddShoppingCartIcon />
     </Paper>
