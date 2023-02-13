@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
 const CategoryData = ({ data, imageUrl }) => {
-  // console.log(data);
 
   return (
     <Box
@@ -37,7 +36,7 @@ const CategoryData = ({ data, imageUrl }) => {
             width: "12.8rem",
             height: "12.8rem",
           }}
-          alt="a"
+          alt={data.name}
           src={imageUrl || data.image}
           width={500}
           height={500}

@@ -7,6 +7,7 @@ const Logo = () => {
     <Link href={"/"}>
       <Box sx={{ height: "6rem", width: "9rem" }}>
         <Image
+        alt="Logo"
           style={{
             width: "100%",
             height: "100%",

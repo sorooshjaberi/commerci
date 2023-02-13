@@ -2,13 +2,17 @@ import React from "react";
 import { Paper } from "@mui/material";
 import TabPanel from "./TabPanel";
 import { useSelector } from "react-redux";
-const TabDetails = () => {
+import SavedItems from "./SavedItems";
+const TabDetails = ({ user }) => {
+  console.log(user);
   const uiStore = useSelector((store) => store.ui);
-  console.log(uiStore.dashboadTabIndex);
   return (
     <Paper sx={{ flex: "1" }}>
-      <TabPanel index={0} value={+uiStore.dashboardTabIndex}>
-        Item 1
+      <TabPanel
+        index={0}
+        value={+uiStore.dashboardTabIndex}
+      >
+        <SavedItems savedItems={user.savedProducts}/>
       </TabPanel>
       <TabPanel index={1} value={+uiStore.dashboardTabIndex}>
         Item 2

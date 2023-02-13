@@ -1,25 +1,26 @@
 import DashboadrLayout from "@/components/dashBoard/DashboardLayout";
 import React from "react";
 import { getUserData, getProductById } from "@/lib/store-api-utils";
-const DashBoard = () => {
-  return <DashboadrLayout />;
+const DashBoard = ({ user }) => {
+  console.log(user);
+  return <DashboadrLayout user={user} />;
 };
 
 export default DashBoard;
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
   const userData = await getUserData();
-  let savedProductsData = userData.saved;
-  savedProductsData = await getProductById(...savedProductsData);
+  const savedProductsData = await getProductById(...userData.saved);
   const boughtProductsData = userData.history;
-  console.log(savedProductsData);
   if (true) {
     return {
       props: {
-        // savedProducts: savedProductsData,
-        // history: boughtProductsData,
-        // firstName: userData.name,
-        // lastName: userData.lastName,
-        // wallet: userData.wallet,
+        user: {
+          savedProducts: savedProductsData,
+          history: boughtProductsData,
+          firstName: userData.name,
+          lastName: userData.lastName,
+          wallet: userData.wallet,
+        },
       },
     };
   } else {

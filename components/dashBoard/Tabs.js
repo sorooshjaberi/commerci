@@ -18,7 +18,6 @@ const Tabs = () => {
         sx={{ borderRight: 1, borderColor: "divider" }}
         value={value}
         onChange={handleChange}
-        textColor="#fafafa"
       >
         <Tab label="Saved" />
         <Tab label="History" />

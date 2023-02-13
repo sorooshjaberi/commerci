@@ -4,8 +4,11 @@ import TabDetails from "./TabDetails";
 import UserData from "./UserData";
 import SideBar from "./SideBar";
 import TabPanel from "./TabPanel";
-const DashboadrLayout = () => {
-  
+import { userAction } from "@/store/user";
+import { useDispatch, useSelector } from "react-redux";
+const DashboadrLayout = ({ user }) => {
+  const dispatch = useDispatch();
+  dispatch(userAction.setUserData(user));
   return (
     <Stack
       spacing={2}
@@ -17,8 +20,8 @@ const DashboadrLayout = () => {
         px: "15rem",
       }}
     >
-      <SideBar />
-      <TabDetails />
+      <SideBar user={user} />
+      <TabDetails user={user} />
     </Stack>
   );
 };
