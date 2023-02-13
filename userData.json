@@ -2,6 +2,6 @@
   "name": "Soroush",
   "lastName": "Jaberi",
   "wallet": 100,
-  "likes": [1],
+  "saved": [1],
   "history": [{ "time": "2020,3,5", "id": 2, "amount": 1 }]
 }
