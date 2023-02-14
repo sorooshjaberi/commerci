@@ -1,7 +1,8 @@
 import Card from "@mui/material/Card";
 import ProductItemContent from "./ProductItemContent";
 import ProductItemButtons from "./ProductItemButtons";
-const ProductItem = ({ data }) => {
+import ProductAmountControllers from "./ProductAmountControllers";
+const ProductItem = ({ data, isCart }) => {
   return (
     <Card
       sx={{
@@ -23,6 +24,7 @@ const ProductItem = ({ data }) => {
     >
       <ProductItemContent data={data} />
       <ProductItemButtons data={data} />
+      {isCart && <ProductAmountControllers data = {data}/>}
     </Card>
   );
 };

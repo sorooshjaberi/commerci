@@ -12,5 +12,5 @@
       "amount": 1
     }
   ],
-  "cart": []
+  "cart": [{ "id": 4, "amount": 1 }]
 }

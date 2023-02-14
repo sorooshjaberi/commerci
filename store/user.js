@@ -8,7 +8,8 @@ const userSlice = createSlice({
       state.userData = payload;
     },
     setCartData(state, { payload }) {
-      state.cart = [...state.cart, payload];
+      const item = state.cart.find((item) => item.id == payload.id);
+      state.cart = [...state.cart, { ...payload, amount: item.amount }];
     },
     createCartData(state, { payload }) {
       state.cart = state.cart.concat(payload);
