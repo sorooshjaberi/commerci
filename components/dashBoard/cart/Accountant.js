@@ -19,6 +19,7 @@ const Accountant = ({ data }) => {
   const rows = data.map((cartItem) => ({
     name: cartItem.title,
     amount: cartItem.amount,
+    id:cartItem.id
   }));
   const totalExpense = data.reduce((a, b) => {
     return (a += b.price * b.amount);

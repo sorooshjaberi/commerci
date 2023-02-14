@@ -3,9 +3,18 @@ import { TableRow, TableCell, Button, Typography, Box } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Stack } from "@mui/system";
-
+import { useDispatch } from "react-redux";
+import { userAction } from "@/store/user";
 const AccTableRow = ({ data }) => {
+  console.log(data);
   const row = data;
+  const dispatch = useDispatch();
+  const onAdd =() => {
+    dispatch(userAction.cartIncrement(data.id))
+  }
+  const onSub = () => {
+    dispatch(userAction.cartDecrement(data.id))
+  }
   return (
     <TableRow
       key={row.name}
@@ -19,10 +28,10 @@ const AccTableRow = ({ data }) => {
       </TableCell>
       <TableCell align="right">
         <div>
-          <Button>
+          <Button onClick={onAdd}>
             <AddIcon />
           </Button>
-          <Button>
+          <Button onClick={onSub}>
             <RemoveIcon />
           </Button>
         </div>
