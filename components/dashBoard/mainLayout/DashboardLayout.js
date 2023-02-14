@@ -1,9 +1,7 @@
 import { Stack } from "@mui/material";
 import React, { useEffect } from "react";
-import TabDetails from "./TabDetails";
-import UserData from "./UserData";
+import TabDetails from "../Tabs/TabDetails";
 import SideBar from "./SideBar";
-import TabPanel from "./TabPanel";
 import { userAction } from "@/store/user";
 import { useDispatch, useSelector } from "react-redux";
 const DashboadrLayout = ({ user }) => {

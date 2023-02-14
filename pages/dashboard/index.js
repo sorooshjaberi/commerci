@@ -1,4 +1,4 @@
-import DashboadrLayout from "@/components/dashBoard/DashboardLayout";
+import DashboadrLayout from "@/components/dashBoard/mainLayout/DashboardLayout";
 import React from "react";
 import { getUserData, getProductById } from "@/lib/store-api-utils";
 const DashBoard = ({ user }) => {

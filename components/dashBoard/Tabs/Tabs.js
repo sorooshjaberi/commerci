@@ -19,9 +19,9 @@ const Tabs = () => {
         value={value}
         onChange={handleChange}
       >
+        <Tab label="Cart"     />
         <Tab label="Saved" />
         <Tab label="History" />
-        <Tab label="Edit Information" disabled    />
       </TabS>
     </Box>
   );

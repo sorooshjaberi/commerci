@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = { dashboardTabIndex: 0, showCart: true };
+const initialState = { dashboardTabIndex: 0, showCart: false };
 
 const uiSlice = createSlice({
   name: "ui",

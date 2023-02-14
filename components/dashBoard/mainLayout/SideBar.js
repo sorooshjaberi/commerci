@@ -1,6 +1,6 @@
 import React from "react";
 import UserData from "./UserData";
-import Tabs from "./Tabs";
+import Tabs from "../Tabs/Tabs";
 import { Divider, Paper, Stack } from "@mui/material";
 const SideBar = () => {
   return (
