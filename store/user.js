@@ -8,7 +8,6 @@ const userSlice = createSlice({
       state.userData = payload;
     },
     setCartData(state, { payload }) {
-      // const item = state.cart.find((item) => item.id == payload.id);
       state.cart = [...state.cart, { ...payload, amount: 0 }];
     },
     createCartData(state, { payload }) {
@@ -41,9 +40,14 @@ const userSlice = createSlice({
       item.amount++;
     },
     cartDecrement(state, { payload: id }) {
-      
       const item = state.cart.find((cartItem) => cartItem.id == id);
       item.amount--;
+      if (item.amount === 0) {
+        const newAdded = state.cart.filter((item) => {
+          return item.id != id;
+        });
+        state.cart = newAdded;
+      }
     },
   },
 });
