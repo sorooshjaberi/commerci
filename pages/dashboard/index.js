@@ -1,9 +1,11 @@
 import DashboadrLayout from "@/components/dashBoard/mainLayout/DashboardLayout";
 import React from "react";
-import { getUserData, getProductById ,getCartItemById} from "@/lib/store-api-utils";
+import {
+  getUserData,
+  getProductById,
+  getCartItemById,
+} from "@/lib/store-api-utils";
 const DashBoard = ({ user }) => {
-  console.log(user);
-  // return <p>dfa</p>
   return <DashboadrLayout user={user} />;
 };
 
@@ -22,7 +24,7 @@ export async function getServerSideProps({ req, res }) {
           firstName: userData.name,
           lastName: userData.lastName,
           wallet: userData.wallet,
-          cartProducts:[...cartItemsData]
+          cartProducts: [...cartItemsData],
         },
       },
     };

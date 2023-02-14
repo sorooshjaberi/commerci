@@ -10,7 +10,7 @@ const TabDetails = ({ user }) => {
   const userStore = useSelector((store) => store.user);
   console.log(userStore);
   return (
-    <Paper sx={{ flex: "1" }}>
+    <Paper sx={{ flex: "1"}}>
       <TabPanel index={0} value={+uiStore.dashboardTabIndex}>
         <CartLayout data={userStore.cart} />
       </TabPanel>

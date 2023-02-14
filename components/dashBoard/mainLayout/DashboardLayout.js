@@ -22,7 +22,7 @@ const DashboadrLayout = ({ user }) => {
       direction="row"
       sx={{
         width: "100%",
-        minHeight: "90vh",
+        height: "90vh",
         py: "5rem",
         px: "15rem",
       }}

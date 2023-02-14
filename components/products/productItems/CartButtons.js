@@ -1,12 +1,11 @@
 import React from "react";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
 import { Paper } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 const CartButtons = ({ data }) => {
-  console.log(data);
   const [isAdded, setIsAdded] = useState(false);
   const userStore = useSelector((store) => store.user.cart);
   const added = !!userStore.find((savedItem) => savedItem.id == data.id);

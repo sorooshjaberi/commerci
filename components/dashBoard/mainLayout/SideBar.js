@@ -7,7 +7,7 @@ const SideBar = () => {
     <Paper
       sx={{
         p: 2,
-        width: "25rem",
+        minWidth: "25rem",
         "& *": {
           fontSize: "2rem",
         },

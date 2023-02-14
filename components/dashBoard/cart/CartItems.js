@@ -1,9 +1,12 @@
 import ProductItem from "@/components/products/productItems/ProductItem";
 import React from "react";
-import CartItem from "./CartItem";
+import { Unstable_Grid2 as Grid} from "@mui/material";
 const CartItems = ({ data }) => {
-  console.log(data);
-  const items = data.map((itemData) => <ProductItem data={itemData} />);
+  const items = data.map((itemData) => (
+    <Grid xs={6}>
+      <ProductItem key={itemData.id} data={itemData} isCart />
+    </Grid>
+  ));
   return <>{items}</>;
 };
 
