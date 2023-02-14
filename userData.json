@@ -2,6 +2,8 @@
   "name": "Soroush",
   "lastName": "Jaberi",
   "wallet": 100,
+  "email": "sorooshjb",
+  "password": "qwerty",
   "saved": [1, 2],
   "history": [
     {
