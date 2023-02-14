@@ -27,7 +27,7 @@ const ProductItem = ({ data, isCart }) => {
       <ProductItemButtons data={data} />
       {isCart && (
         <>
-          <Divider sx={{ width: "100%",mb:'1rem', height: "auto" }} />
+          <Divider sx={{ width: "100%", mb: "1rem", height: "auto" }} />
           <ProductAmountControllers data={data} />
         </>
       )}

@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 const SearchBar = () => {
   return (
     <Box
+    
       display={"flex"}
       alignItems="flex-end"
       width={"70%"}
@@ -42,7 +43,7 @@ const SearchBar = () => {
           position: "relative",
         }}
       />
-      <TextField fullWidth label="Search" variant="filled" />
+      <TextField  fullWidth label="Search" variant="filled" />
     </Box>
   );
 };
