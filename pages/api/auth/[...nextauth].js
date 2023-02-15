@@ -13,10 +13,12 @@ const authenticator = NextAuth({
           await dbClose();
           throw new Error("User not found");
         }
-        const isRight = passwordVerifier(credentials.password, user.password);
+        const isRight =await passwordVerifier(credentials.password, user.password);
+        console.log(isRight);
         if (!isRight) {
           await dbClose();
           throw new Error("Wrong password");
+          return;
         }
         dbClose();
         console.log("nextauth:", {

@@ -13,6 +13,7 @@ const DashBoard = ({ user }) => {
 
 export default DashBoard;
 export async function getServerSideProps({ req, res }) {
+  if(typeof window !== 'undefined')return;
   const loginData = await getSession({ req });
   if (loginData) {
     const user = await getUserByEmail(loginData.user.email);

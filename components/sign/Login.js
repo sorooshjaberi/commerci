@@ -8,10 +8,11 @@ import { loginValidate as validate } from "@/lib/sign-data-utils";
 import { useSession } from "next-auth/react";
 import { loginHandler } from "@/lib/api/login-util";
 import { useRouter } from "next/router";
-
+import { useDispatch } from "react-redux";
+import { uiAction } from "@/store/ui";
 const Login = ({ hideLogin }) => {
+  const dispatch = useDispatch();
   const router = useRouter();
-  // router.replace('/')
   const styles = {
     inputs: { fontSize: "2rem " },
     inputLabel: { fontSize: "1.3rem" },
@@ -23,15 +24,24 @@ const Login = ({ hideLogin }) => {
       password: "",
     },
     onSubmit: (values) => {
-      try {
-        loginHandler(values).then((res) => {
-          console.log(router.push);
+      loginHandler(values)
+        .then((res) => {
+          dispatch(
+            uiAction.changeAlert({
+              type: "success",
+              context: "Logged in successfully",
+            })
+          );
           router.push("/");
+        })
+        .catch((err) => {
+          dispatch(
+            uiAction.changeAlert({
+              type: "error",
+              context: err.message || "something went wrong while loggin in",
+            })
+          );
         });
-        router.replace("/dashboard");
-      } catch (err) {
-        console.log(err);
-      }
     },
     validate,
   });

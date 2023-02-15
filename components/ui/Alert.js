@@ -1,16 +1,30 @@
-import React from "react";
-import { Snackbar, Alert } from "@mui/material";
-import { useSelector } from "react-redux";
-const Alert = () => {
-    const alertStore = useSelector(store=>store.ui.alert)
-    if(!alertStore.type)return;
-  return (
-    <Snackbar open={open} autoHideDuration={alertStore.duration} onClose={handleClose}>
-      <Alert onClose={handleClose} severity={alertStore.type} sx={{ width: "100%" }}>
-        This is a success message!
-      </Alert>
-    </Snackbar>
-  );
-};
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import { useSelector, useDispatch } from "react-redux";
+import { uiAction } from "@/store/ui";
+import { Typography } from "@mui/material";
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
-export default Alert;
+export default function CustomizedSnackbars() {
+  const alertStore = useSelector((store) => store.ui.alert);
+  const dispatch = useDispatch();
+  setTimeout(() => {
+    dispatch(uiAction.changeAlert({ type: null, context: "" }));
+  }, alertStore.duration);
+  if (!alertStore.type) return;
+
+  return (
+    <Stack spacing={2} sx={{ width: "100%" }}>
+      <Snackbar open={!!alertStore.type} autoHideDuration={alertStore.duration}>
+        <Alert severity={alertStore.type} sx={{ width: "100%" }}>
+          <Typography variant="h4">{alertStore.context}</Typography>
+        </Alert>
+      </Snackbar>
+    </Stack>
+  );
+}
