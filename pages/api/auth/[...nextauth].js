@@ -8,7 +8,7 @@ const authenticator = NextAuth({
     Credentials({
       async authorize(credentials) {
         const collection = await getUsersCollection();
-        const user = collection.findOne({ email: credentials.email });
+        const user = await collection.findOne({ email: credentials.email });
         if (!user) {
           await dbClose();
           throw new Error("User not found");
@@ -19,7 +19,17 @@ const authenticator = NextAuth({
           throw new Error("Wrong password");
         }
         dbClose();
-        return { ...user };
+        console.log("nextauth:", {
+          name: user.name,
+          lastName: user.lastName,
+          email: user.email,
+        });
+        const data = {
+          name: user.name,
+          lastName: user.lastName,
+          email: user.email,
+        };
+        return { email:user.email };
       },
     }),
   ],

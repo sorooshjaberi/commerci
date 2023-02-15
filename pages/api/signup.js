@@ -1,4 +1,9 @@
-import { addUser, dbClose, dbConnect } from "@/lib/api/mongo-utils";
+import {
+  addUser,
+  dbClose,
+  dbConnect,
+  getUsersCollection,
+} from "@/lib/api/mongo-utils";
 
 const handler = async (req, res) => {
   if (!req.method === "POST") {
@@ -6,7 +11,14 @@ const handler = async (req, res) => {
     return;
   }
   const bodyInJson = JSON.parse(req.body);
-
+  const collection = await getUsersCollection();
+  const alreadyCreated = await collection.findOne({
+    email: bodyInJson.email,
+  });
+  if (alreadyCreated) {
+    res.status(402).json({ message: "this email has already an account" });
+    return;
+  }
   let _id;
   try {
     _id = await addUser(bodyInJson);
