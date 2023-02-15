@@ -10,11 +10,11 @@ import { uiAction } from "@/store/ui";
 import { useDispatch } from "react-redux";
 
 const UserButtons = () => {
-  const LoggedIn = true;
+  const LoggedIn = false;
   const dispatch = useDispatch();
   const openCart = () => {
-    dispatch(uiAction.changeTab(0))
-  }
+    dispatch(uiAction.changeTab(0));
+  };
   const enteringButton = LoggedIn ? (
     <Link href={"/dashboard"}>
       <Paper sx={{ bgcolor: "transparent", p: 1, cursor: "pointer" }}>

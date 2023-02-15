@@ -12,12 +12,12 @@ const FormGroup = ({ styles, formik, type, title }) => {
         type={type}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values.type}
+        value={formik.values[type]}
         sx={{ ...styles.inputs }}
       />
-      {formik.errors.type && formik.touched.type ? (
+      {formik.errors[type] && formik.touched[type] ? (
         <FormHelperText sx={{ ...styles.inputHelper }}>
-          {formik.errors.type}
+          {formik.errors[type]}
         </FormHelperText>
       ) : null}
     </FormControl>

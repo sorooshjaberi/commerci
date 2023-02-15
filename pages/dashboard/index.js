@@ -15,7 +15,7 @@ export async function getServerSideProps({ req, res }) {
   const savedProductsData = await getProductById(userData.saved);
   const boughtProductsData = userData.history;
   const cartItemsData = await getCartItemById(userData.cart);
-  if (true) {
+  if (false) {
     return {
       props: {
         user: {
@@ -31,7 +31,7 @@ export async function getServerSideProps({ req, res }) {
   } else {
     return {
       redirect: {
-        destination: "/",
+        destination: "/sign-in",
         permanent: false,
       },
     };
