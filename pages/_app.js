@@ -7,13 +7,16 @@ import "@fontsource/roboto/700.css";
 import NavBar from "@/components/Navigation/NavBar";
 import { Provider } from "react-redux";
 import store from "@/store/store";
+import { SessionProvider } from "next-auth/react";
 
 const App = ({ Component, pageProps }) => {
   return (
-    <Provider store={store}>
-      <NavBar />
-      <Component {...pageProps} />
-    </Provider>
+    <SessionProvider>
+      <Provider store={store}>
+        <NavBar />
+        <Component {...pageProps} />
+      </Provider>
+    </SessionProvider>
   );
 };
 

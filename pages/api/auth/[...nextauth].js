@@ -18,7 +18,7 @@ const authenticator = NextAuth({
           throw new Error("Wrong password");
         }
         dbClose();
-        return { email: credentials.email };
+        return { ...user };
       },
     }),
   ],

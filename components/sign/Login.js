@@ -2,14 +2,11 @@ import React from "react";
 import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import {
-  Stack,
-  Divider,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Stack, Divider, Typography, Link } from "@mui/material";
 import FormGroup from "./FormGroup";
 import { loginValidate as validate } from "@/lib/sign-data-utils";
+import { useSession } from "next-auth/react";
+import { loginHandler } from "@/lib/api/login-util";
 
 const Login = ({ hideLogin }) => {
   const styles = {
@@ -23,7 +20,11 @@ const Login = ({ hideLogin }) => {
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      try {
+        loginHandler(values);
+      } catch (err) {
+        console.log(err);
+      }
     },
     validate,
   });
