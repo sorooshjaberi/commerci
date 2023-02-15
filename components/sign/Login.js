@@ -7,8 +7,11 @@ import FormGroup from "./FormGroup";
 import { loginValidate as validate } from "@/lib/sign-data-utils";
 import { useSession } from "next-auth/react";
 import { loginHandler } from "@/lib/api/login-util";
+import { useRouter } from "next/router";
 
 const Login = ({ hideLogin }) => {
+  const router = useRouter();
+  // router.replace('/')
   const styles = {
     inputs: { fontSize: "2rem " },
     inputLabel: { fontSize: "1.3rem" },
@@ -21,7 +24,11 @@ const Login = ({ hideLogin }) => {
     },
     onSubmit: (values) => {
       try {
-        loginHandler(values);
+        loginHandler(values).then((res) => {
+          console.log(router.push);
+          router.push("/");
+        });
+        router.replace("/dashboard");
       } catch (err) {
         console.log(err);
       }
