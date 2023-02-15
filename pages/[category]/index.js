@@ -1,9 +1,26 @@
-import React from 'react'
+import CategoryLayout from "@/components/singleCategory/CategoryLayout";
+import { getOneCategoryProducts } from "@/lib/store-api-utils";
+import React from "react";
 
-const Index = () => {
-  return (
-    <div>Index</div>
-  )
+const CategoryPage = ({data}) => {
+  console.log(data);
+  return <CategoryLayout data={data}/>;
+};
+
+export default CategoryPage;
+
+export async function getStaticProps(context) {
+  const catId = context.params.category;
+  let productsData = getOneCategoryProducts(catId);
+  return {
+    props:{data:productsData}
+  }
 }
-
-export default Index
+export async function getStaticPaths() {
+ const paths = Array(5).fill(0).map((e,i)=>i+1).map(e=>({params:{category:e.toString()}}))
+ console.log(paths);
+  return {
+    paths ,
+    fallback: "blocking",
+  };
+}
