@@ -8,9 +8,12 @@ import PersonIcon from "@mui/icons-material/Person";
 import Link from "next/link";
 import { uiAction } from "@/store/ui";
 import { useDispatch } from "react-redux";
+import { useSession } from "next-auth/react";
 
 const UserButtons = () => {
-  const LoggedIn = false;
+  const { data, status } = useSession();
+  console.log(!!data);
+  const LoggedIn = !!data;
   const dispatch = useDispatch();
   const openCart = () => {
     dispatch(uiAction.changeTab(0));
@@ -23,7 +26,6 @@ const UserButtons = () => {
     </Link>
   ) : (
     <Link href={"/sign-in"}>
-      {" "}
       <SignButton />
     </Link>
   );
