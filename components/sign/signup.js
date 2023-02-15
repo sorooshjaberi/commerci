@@ -4,9 +4,14 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Stack, Divider, Typography, Link } from "@mui/material";
 import FormGroup from "./FormGroup";
-import { signupValidate as validate , createAccount} from "@/lib/sign-data-utils";
-
+import {
+  signupValidate as validate,
+  createAccount,
+} from "@/lib/sign-data-utils";
+import { useDispatch } from "react-redux";
+import { uiAction } from "@/store/ui";
 const Signup = ({ showLogin }) => {
+  const dispatch = useDispatch();
   const styles = {
     inputs: { fontSize: "2rem " },
     inputLabel: { fontSize: "1.3rem" },
@@ -20,7 +25,21 @@ const Signup = ({ showLogin }) => {
       lastName: "",
     },
     onSubmit: (values) => {
-      createAccount(values);
+      createAccount(values)
+        .then((_) => {
+          dispatch(
+            uiAction.changeAlert({
+              type: "success",
+              context: "Account created successfully",
+            })
+          );
+        })
+        .catch((err) => {
+          console.log(err.message);
+          dispatch(
+            uiAction.changeAlert({ type: "error", context: err.message })
+          );
+        });
     },
     validate,
   });
