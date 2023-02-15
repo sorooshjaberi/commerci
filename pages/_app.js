@@ -8,6 +8,7 @@ import NavBar from "@/components/Navigation/NavBar";
 import { Provider } from "react-redux";
 import store from "@/store/store";
 import { SessionProvider } from "next-auth/react";
+import Alert from "@/components/ui/Alert";
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -15,6 +16,7 @@ const App = ({ Component, pageProps }) => {
       <Provider store={store}>
         <NavBar />
         <Component {...pageProps} />
+        <Alert />
       </Provider>
     </SessionProvider>
   );

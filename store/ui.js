@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = { dashboardTabIndex: 0, showCart: false };
+const initialState = {
+  dashboardTabIndex: 0,
+  showCart: false,
+  alert: { type: null, duration: 6000 },
+};
 
 const uiSlice = createSlice({
   name: "ui",
@@ -13,6 +17,12 @@ const uiSlice = createSlice({
     },
     changeTab(state, { payload }) {
       state.dashboardTabIndex = payload;
+    },
+    changeAlert(state, { payload }) {
+      setTimeout(() => {
+        state.alert.type = null;
+      }, state.alert.duration);
+      state.alert.type = payload;
     },
   },
 });
