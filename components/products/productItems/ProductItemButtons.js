@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import CartButtons from "./CartButtons";
 import SaveButtons from "./SaveButtons";
-
-const ProductItemButtons = ({ data }) => {
+import { useSession } from "next-auth/react";
+const ProductItemButtons = ({ data: datas }) => {
+  const { data, status } = useSession();
   return (
     <Box
       sx={{
@@ -13,8 +14,8 @@ const ProductItemButtons = ({ data }) => {
         flexDirection: "column",
       }}
     >
-      <CartButtons data={data} />
-      <SaveButtons data={data} />
+      <CartButtons loginStatus={!!data} data={datas} />
+      <SaveButtons loginStatus={!!data} data={datas} />
     </Box>
   );
 };

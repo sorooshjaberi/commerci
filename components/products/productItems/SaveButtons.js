@@ -5,7 +5,8 @@ import { userAction } from "@/store/user";
 import { Paper } from "@mui/material";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
-const SaveButtons = ({ data }) => {
+import { uiAction } from "@/store/ui";
+const SaveButtons = ({ data, loginStatus }) => {
   const [isAdded, setIsAdded] = useState(false);
   const userStore = useSelector((store) => store.user.saved);
   const added = !!userStore.find((savedItem) => savedItem.id == data.id);
@@ -16,6 +17,15 @@ const SaveButtons = ({ data }) => {
   }, []);
   const dispatch = useDispatch();
   const addSavedHandler = (e) => {
+    if (!loginStatus) {
+      dispatch(
+        uiAction.changeAlert({
+          type: "error",
+          context: "signin to save products",
+        })
+      );
+      return;
+    }
     e.stopPropagation();
     dispatch(userAction.setSavedData(data));
     setIsAdded(true);

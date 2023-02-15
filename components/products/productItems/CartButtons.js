@@ -5,7 +5,9 @@ import { userAction } from "@/store/user";
 import { Paper } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
-const CartButtons = ({ data }) => {
+import { uiAction } from "@/store/ui";
+
+const CartButtons = ({ data,loginStatus }) => {
   const [isAdded, setIsAdded] = useState(false);
   const userStore = useSelector((store) => store.user.cart);
   const added = !!userStore.find((savedItem) => savedItem.id == data.id);
@@ -16,6 +18,15 @@ const CartButtons = ({ data }) => {
   }, []);
   const dispatch = useDispatch();
   const addShoppingCartHandler = (e) => {
+    if (!loginStatus) {
+      dispatch(
+        uiAction.changeAlert({
+          type: "error",
+          context: "signin to add products to cart",
+        })
+      );
+      return;
+    }
     e.stopPropagation();
     dispatch(userAction.setCartData(data));
     console.log(userStore);

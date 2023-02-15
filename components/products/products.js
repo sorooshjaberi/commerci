@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import React from "react";
 import CategorySlider from "./category/categorySlider";
 const Products = ({ products }) => {
+  
   return (
     <Box
       sx={{
