@@ -1,5 +1,7 @@
-module.exports = {
-  images: {
+const{PHASE_DEVELOPMENT_SERVER} = require('next/constants')
+
+module.exports = (phase) =>{
+  const imagesConfig ={
     remotePatterns: [
       {
         protocol: 'https',
@@ -14,8 +16,18 @@ module.exports = {
         pathname: '/**',
       },
     ],
-  },
-  env:{
-    NEXTAUTH_SECRET:"AhIgspa1zpus/bTJtT49v4Il5XwcWh2vW1Hxp0mWxQc="
   }
-};
+  if(phase ===PHASE_DEVELOPMENT_SERVER){
+ return {
+   images:imagesConfig , 
+  }
+}else{
+  return {
+    images:imagesConfig , 
+    env:{
+      NEXTAUTH_SECRET:"AhIgspa1zpus/bTJtT49v4Il5XwcWh2vW1Hxp0mWxQc="
+    }
+   }
+
+}
+}
