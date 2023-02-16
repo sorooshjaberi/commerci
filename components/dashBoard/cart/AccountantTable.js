@@ -9,7 +9,7 @@ const AccountantTable = ({ data }) => {
       <Table sx={{ minWidth: 100 }} aria-label="simple table">
         <TableBody>
           {data.map((row) => (
-            <AccTableRow data={row} />
+            <AccTableRow key={Math.random()} data={row} />
           ))}
         </TableBody>
       </Table>

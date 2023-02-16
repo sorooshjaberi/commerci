@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
 const CategoryData = ({ data, imageUrl }) => {
-
   return (
     <Box
       sx={{
@@ -53,7 +52,7 @@ const CategoryData = ({ data, imageUrl }) => {
         textAlign={"center"}
         variant="h5"
       >
-        <Link href={"/"}>See more &rArr;</Link>
+        <Link href={`${data.id}`}>See more &rArr;</Link>
       </Typography>
     </Box>
   );

@@ -2,7 +2,6 @@ import { getUsersCollection, dbClose } from "@/lib/api/mongo-utils";
 import { passwordVerifier } from "@/lib/password-crypt-utils";
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
-import { redirect } from "next/dist/server/api-utils";
 const authenticator = NextAuth({
   providers: [
     Credentials({

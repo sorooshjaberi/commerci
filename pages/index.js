@@ -1,10 +1,10 @@
  
-// import Products from "@/components/products/Products";
+import Products from "@/components/products/Products";
 import { getProductsByCategory } from "@/lib/store-api-utils";
 const HomePage = (props) => {
   return (
     <div id='home' style={{width:'100vw'}} >
-      {/* <Products products={props.products} /> */}
+      <Products products={props.products} />
     </div>
   );
 };
