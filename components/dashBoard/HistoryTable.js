@@ -4,8 +4,6 @@ import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
-import TableCell from "@mui/material/TableCell";
-
 import Link from "next/link";
 const HistoryTable = ({ historyItems }) => {
   return (
