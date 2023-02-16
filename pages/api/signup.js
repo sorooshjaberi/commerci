@@ -1,7 +1,5 @@
 import {
   addUser,
-  dbClose,
-  dbConnect,
   getUsersCollection,
 } from "@/lib/api/mongo-utils";
 

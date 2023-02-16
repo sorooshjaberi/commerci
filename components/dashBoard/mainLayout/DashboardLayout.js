@@ -1,9 +1,10 @@
-import { Stack } from "@mui/material";
-import React, { useEffect } from "react"
+import  { useEffect } from "react"
 import TabDetails from "../Tabs/TabDetails";
 import SideBar from "./SideBar";
 import { userAction } from "@/store/user";
 import { useDispatch, useSelector } from "react-redux";
+import Stack from '@mui/material/Stack'
+
 const DashboadrLayout = ({ user }) => {
   const userStore = useSelector((store) => store.user);
   const { firstName, lastName, wallet, savedProducts, cartProducts, history } =

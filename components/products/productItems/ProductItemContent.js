@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Typography } from "@mui/material";
- 
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 const ProductItemContent = ({ data }) => {
   return (
     <Link href={`/${data.category.id}/${data.id}`}>
@@ -9,7 +10,8 @@ const ProductItemContent = ({ data }) => {
         sx={{
           borderRadius: "8rem",
           overflow: "hidden",
-          boxShadow: 1,mb:4
+          boxShadow: 1,
+          mb: 4,
         }}
       >
         <Image

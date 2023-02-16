@@ -1,8 +1,8 @@
  
 import Box from "@mui/material/Box";
-import Image from "next/image";
 import ProductSlider from "./slider/ProductSlider";
-import { Typography, Paper } from "@mui/material";
+import Typography from '@mui/material/Typography'
+import Paper from '@mui/material/Paper'
 
 const ProductDetail = ({ productDetail }) => {
   return (

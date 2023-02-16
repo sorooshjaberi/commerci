@@ -1,4 +1,7 @@
-import { Avatar, Box, Button, Typography } from "@mui/material";
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+
 const UserData = () => {
   const spaceBetweenFlex = {
     display: "flex",

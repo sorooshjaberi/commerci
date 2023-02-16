@@ -1,12 +1,13 @@
  
 import ProductItem from "../../products/productItems/ProductItem";
-import { Box, Unstable_Grid2 as Grid } from "@mui/material";
+import { Unstable_Grid2 as Grid } from "@mui/material";
+import Unstable_Grid2 from "@mui/material/Unstable_Grid2";
 const SavedItems = ({ savedItems }) => {
   const products = savedItems.map((savedItem) => {
     return (
-      <Grid xs={3} key={savedItem.id}>
+      <Unstable_Grid2 xs={3} key={savedItem.id}>
         <ProductItem data={savedItem} />
-      </Grid>
+      </Unstable_Grid2>
     );
   });
 

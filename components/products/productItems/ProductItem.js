@@ -2,7 +2,8 @@ import Card from "@mui/material/Card";
 import ProductItemContent from "./ProductItemContent";
 import ProductItemButtons from "./ProductItemButtons";
 import ProductAmountControllers from "./ProductAmountControllers";
-import { Divider } from "@mui/material";
+import Divider from '@mui/material/Divider'
+
 const ProductItem = ({ data, isCart }) => {
   return (
     <Card

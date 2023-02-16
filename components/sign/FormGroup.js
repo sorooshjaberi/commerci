@@ -1,5 +1,9 @@
  
-import { FormControl, InputLabel, Input, FormHelperText } from "@mui/material";
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import Input from '@mui/material/Input'
+import FormHelperText from '@mui/material/FormHelperText'
+
 const FormGroup = ({ styles, formik, type, title }) => {
   return (
     <FormControl>

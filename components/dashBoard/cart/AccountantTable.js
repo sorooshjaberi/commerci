@@ -1,13 +1,7 @@
- 
-import {
-    Box,
-    TableContainer,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    Divider,
-  } from "@mui/material";
+import Box from '@mui/material/Box'
+import TableContainer from '@mui/material/TableContainer'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
   import AccTableRow from "./AccTableRow";
 const AccountantTable = ({ data }) => {
   return (

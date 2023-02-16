@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
+
 import CartButtons from "./CartButtons";
 import SaveButtons from "./SaveButtons";
 import { useSession } from "next-auth/react";

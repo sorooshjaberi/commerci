@@ -1,7 +1,10 @@
  
 import UserData from "./UserData";
 import Tabs from "../Tabs/Tabs";
-import { Divider, Paper, Stack } from "@mui/material";
+import Divider from '@mui/material/Divider'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
+
 import Logout from "./Logout";
 const SideBar = () => {
   return (

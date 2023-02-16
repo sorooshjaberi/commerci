@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
 import { Paper } from "@mui/material";
+import Paper from '@mui/material/Paper'
+
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import { uiAction } from "@/store/ui";

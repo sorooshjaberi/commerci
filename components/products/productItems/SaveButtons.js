@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
-import { Paper } from "@mui/material";
+import Paper from "@mui/material/Paper";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
 import { uiAction } from "@/store/ui";

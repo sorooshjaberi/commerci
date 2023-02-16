@@ -1,8 +1,9 @@
-import { Paper, Stack } from "@mui/material";
- 
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Accountant from "./Accountant";
 import CartItems from "./CartItems";
-import { Unstable_Grid2 as Grid2 } from "@mui/material";
+import Unstable_Grid2 from '@mui/material/Unstable_Grid2'
+
 const CartLayout = ({ data }) => {
   return (
     <Stack
@@ -19,9 +20,9 @@ const CartLayout = ({ data }) => {
           overflow: "scroll",
         }}
       >
-        <Grid2 overflow={"scroll"} container spacing={2}>
+        <Unstable_Grid2 overflow={"scroll"} container spacing={2}>
           <CartItems data={data} />
-        </Grid2>
+        </Unstable_Grid2>
       </Paper>
       <Paper sx={{ bgcolor: "#fafafa", flex: 1, height: "100%" }}>
         <Accountant data={data} />

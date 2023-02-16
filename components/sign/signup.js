@@ -2,7 +2,11 @@
 import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { Stack, Divider, Typography, Link } from "@mui/material";
+import Stack from '@mui/material/Stack'
+import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
+
 import FormGroup from "./FormGroup";
 import {
   signupValidate as validate,
