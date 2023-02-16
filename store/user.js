@@ -8,7 +8,7 @@ const userSlice = createSlice({
       state.userData = payload;
     },
     setCartData(state, { payload }) {
-      state.cart = [...state.cart, { ...payload, amount: 0 }];
+      state.cart = [...state.cart, { ...payload, amount: 1 }];
     },
     createCartData(state, { payload }) {
       state.cart = state.cart.concat(payload);
