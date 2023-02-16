@@ -31,6 +31,5 @@ const authenticator = NextAuth({
       },
     }),
   ],
-  secret:process.env.NEXTAUTH_SECRET
 });
 export default authenticator;
