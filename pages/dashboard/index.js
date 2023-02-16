@@ -16,7 +16,7 @@ const DashBoard = ({ user }) => {
 export default DashBoard;
 export async function getServerSideProps({ req, res }) {
   const loginData = await getServerSession(req,res)
-  if (loginData) {
+  if (false) {
     const user = await getUserByEmail(loginData.user.email);
     const userData = user;
     const savedProductsData = await getProductById(userData.saved);
