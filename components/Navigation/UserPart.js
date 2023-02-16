@@ -1,6 +1,6 @@
  
 import SignButton from "./SignButton";
-import Paper from "@mui/material/paper";
+import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
