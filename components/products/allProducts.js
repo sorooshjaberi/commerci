@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import CategorySlider from "./category/categorySlider";
-const Products = ({ products }) => {
+const AllProducts = ({ products }) => {
   return (
     <Box
       sx={{
@@ -22,4 +22,4 @@ const Products = ({ products }) => {
   );
 };
 
-export default Products;
+export default AllProducts;
