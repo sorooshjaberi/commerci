@@ -15,7 +15,7 @@ export async function getStaticProps(context) {
   const { params } = context;
   const { category, productId } = params;
 
-  const productDetail = allData[category - 1].find((product) => {
+  const productDetail = allData[category - 1]?.find((product) => {
     return product.id == productId;
   });
   return {
