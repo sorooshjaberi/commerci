@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import CategorySlider from "./category/categorySlider";
 const Products = ({ products }) => {
-  
+  return(<p>ajdfldjf;aldjfa;lskjfa</p>)
   return (
     <Box
       sx={{
