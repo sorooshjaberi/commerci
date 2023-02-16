@@ -1,5 +1,5 @@
 import Paper from "@mui/material/Paper";
-import * as Grid from "@mui/material/Unstable_Grid2";
+import Unstable_Grid2 from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
 import ProductItem from "../products/productItems/ProductItem";
 
@@ -16,13 +16,13 @@ const CategoryLayout = ({ data }) => {
         {data[0].category.name}
       </Typography>
       <Paper sx={{ m: 2, p: 2 }}>
-        <Grid container spacing={2}>
+        <Unstable_Grid2 container spacing={2}>
           {data.map((item) => (
-            <Grid key={item.id} xs={4}>
+            <Unstable_Grid2 key={item.id} xs={4}>
               <ProductItem data={item} />
-            </Grid>
+            </Unstable_Grid2>
           ))}
-        </Grid>
+        </Unstable_Grid2>
       </Paper>
     </>
   );
