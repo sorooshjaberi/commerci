@@ -13,7 +13,10 @@ const authenticator = NextAuth({
           await dbClose();
           throw new Error("User not found");
         }
-        const isRight =await passwordVerifier(credentials.password, user.password);
+        const isRight = await passwordVerifier(
+          credentials.password,
+          user.password
+        );
         console.log(isRight);
         if (!isRight) {
           await dbClose();
@@ -31,9 +34,10 @@ const authenticator = NextAuth({
           lastName: user.lastName,
           email: user.email,
         };
-        return { email:user.email };
+        return { email: user.email };
       },
     }),
   ],
+  secret: process.env.JWT_SECRET,
 });
 export default authenticator;
