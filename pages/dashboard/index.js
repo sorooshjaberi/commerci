@@ -8,6 +8,7 @@ import {
 import { getSession } from "next-auth/react";
 import { getUserByEmail } from "@/lib/api/mongo-utils";
 const DashBoard = ({ user }) => {
+  return <p>...</p>
   return <DashboadrLayout user={user} />;
 };
 
