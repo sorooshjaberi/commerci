@@ -17,7 +17,6 @@ export async function getServerSideProps({ req, res }) {
   const loginData = await getSession({ req });
   if (loginData) {
     const user = await getUserByEmail(loginData.user.email);
-    console.log(user);
     const userData = user;
     const savedProductsData = await getProductById(userData.saved);
     const boughtProductsData = userData.history;

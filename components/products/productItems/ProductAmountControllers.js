@@ -1,5 +1,7 @@
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
+
+
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
  
@@ -17,7 +19,6 @@ const ProductAmountControllers = ({ data }) => {
   };
   const cartStore = useSelector((store) => store.user.cart);
   const amount = cartStore.find((item) => item.id == data.id).amount;
-  console.log(data.amount);
   return (
     <Stack
       direction={"row"}

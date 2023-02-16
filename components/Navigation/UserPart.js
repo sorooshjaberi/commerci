@@ -12,7 +12,6 @@ import { useSession } from "next-auth/react";
 
 const UserButtons = () => {
   const { data, status } = useSession();
-  console.log(!!data);
   const LoggedIn = !!data;
   const dispatch = useDispatch();
   const openCart = () => {

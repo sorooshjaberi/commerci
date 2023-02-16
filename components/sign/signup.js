@@ -39,7 +39,6 @@ const Signup = ({ showLogin }) => {
           );
         })
         .catch((err) => {
-          console.log(err.message);
           dispatch(
             uiAction.changeAlert({ type: "error", context: err.message })
           );

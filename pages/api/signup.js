@@ -24,7 +24,6 @@ const handler = async (req, res) => {
     res.status(402).json({ message: "couldn't add data to mongodb" });
     return;
   }
-  console.log(_id);
   res.status(201).json({
     message: "Account has been created! ",
     body: { ...bodyInJson, _id },

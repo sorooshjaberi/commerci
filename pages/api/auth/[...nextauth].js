@@ -17,18 +17,12 @@ const authenticator = NextAuth({
           credentials.password,
           user.password
         );
-        console.log(isRight);
         if (!isRight) {
           await dbClose();
           throw new Error("Wrong password");
           return;
         }
         dbClose();
-        console.log("nextauth:", {
-          name: user.name,
-          lastName: user.lastName,
-          email: user.email,
-        });
         const data = {
           name: user.name,
           lastName: user.lastName,

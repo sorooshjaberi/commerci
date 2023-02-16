@@ -4,6 +4,8 @@ import ProductSlider from "./slider/ProductSlider";
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 
+
+
 const ProductDetail = ({ productDetail }) => {
   return (
     <div id="aaaaaaaaa">

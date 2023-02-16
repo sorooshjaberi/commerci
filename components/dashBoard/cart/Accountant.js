@@ -5,7 +5,6 @@ import AccountantTable from "./AccountantTable";
 import Total from "./Total";
 
 const Accountant = ({ data }) => {
-  console.log(data);
   const rows = data.map((cartItem) => ({
     name: cartItem.title,
     amount: cartItem.amount,
@@ -14,7 +13,6 @@ const Accountant = ({ data }) => {
   const totalExpense = data.reduce((a, b) => {
     return (a += b.price * b.amount);
   }, 0);
-  console.log(totalExpense);
   return (
     <Box
       display={"flex"}

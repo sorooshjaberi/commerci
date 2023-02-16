@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/store/user";
-import { Paper } from "@mui/material";
 import Paper from '@mui/material/Paper'
+
+
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
@@ -30,14 +31,12 @@ const CartButtons = ({ data, loginStatus }) => {
     }
     e.stopPropagation();
     dispatch(userAction.setCartData(data));
-    console.log(userStore);
     setIsAdded(true);
   };
   const removeShoppingCartHandler = (e) => {
     e.stopPropagation();
 
     dispatch(userAction.removeCartData(data.id));
-    console.log(userStore);
     setIsAdded(false);
   };
 

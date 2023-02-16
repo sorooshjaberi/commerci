@@ -29,7 +29,6 @@ const userSlice = createSlice({
       state.saved = newAdded;
     },
     createSavedData(state, { payload }) {
-      console.log(payload);
       state.saved = state.saved.concat(payload);
     },
     firstTimeDone(state) {

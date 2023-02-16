@@ -1,5 +1,5 @@
  
-import Paper from '@mui/material/paper'
+import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
