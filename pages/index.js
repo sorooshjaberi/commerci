@@ -1,5 +1,5 @@
  
-import Products from "@/components/products/Products";
+// import Products from "@/components/products/Products";
 import { getProductsByCategory } from "@/lib/store-api-utils";
 const HomePage = (props) => {
   return (
