@@ -6,6 +6,7 @@ import {
   getCartItemById,
 } from "@/lib/store-api-utils";
 import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 import { getUserByEmail } from "@/lib/api/mongo-utils";
 const DashBoard = ({ user }) => {
   return <p>...</p>
@@ -14,9 +15,8 @@ const DashBoard = ({ user }) => {
 
 export default DashBoard;
 export async function getServerSideProps({ req, res }) {
-  // const loginData = await getSession({ req });
-  // console.log(loginData);
-  if (false) {
+  const loginData = await getServerSession(req,res)
+  if (loginData) {
     const user = await getUserByEmail(loginData.user.email);
     const userData = user;
     const savedProductsData = await getProductById(userData.saved);
