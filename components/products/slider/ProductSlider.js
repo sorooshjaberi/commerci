@@ -3,7 +3,7 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-import React from "react";
+ 
 import { Swiper } from "swiper/react";
 import Slides from "./slides";
 

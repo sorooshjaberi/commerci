@@ -1,7 +1,7 @@
 import { Paper } from "@mui/material";
 // import Unstable_Grid2 as Grid from '@mui/material/Unstable_Grid2'
 import { Unstable_Grid2 as Grid  , Typography} from "@mui/material";
-import React from "react";
+ 
 import ProductItem from "../products/productItems/ProductItem";
 
 const CategoryLayout = ({ data }) => {

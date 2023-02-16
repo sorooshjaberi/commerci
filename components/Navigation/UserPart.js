@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import SignButton from "./SignButton";
 import Paper from "@mui/material/paper";
 import Stack from "@mui/material/Stack";

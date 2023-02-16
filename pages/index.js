@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import Products from "@/components/products/Products";
 import Box from "@mui/material/Box";
 import { getProductsByCategory } from "@/lib/store-api-utils";

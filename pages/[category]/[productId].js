@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import { getProductsByCategory } from "@/lib/store-api-utils";
 import ProductDetail from "@/components/products/ProductDetail";
 const ProductItem = ({ productDetail }) => {

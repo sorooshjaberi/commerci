@@ -1,17 +1,7 @@
-import {
-  Box,
-  TableContainer,
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-  Divider,
-  Button,
-  Stack,
-} from "@mui/material";
-import React from "react";
+import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
+import Button from '@mui/material/Button'
 import AccountantTable from "./AccountantTable";
-import AccTableRow from "./AccTableRow";
 import Total from "./Total";
 
 const Accountant = ({ data }) => {

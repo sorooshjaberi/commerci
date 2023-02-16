@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import ProductItem from "../productItems/ProductItem";
 import Stack from "@mui/material/Stack";
 

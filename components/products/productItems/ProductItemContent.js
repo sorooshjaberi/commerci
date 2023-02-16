@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Typography } from "@mui/material";
-import React from "react";
+ 
 const ProductItemContent = ({ data }) => {
   return (
     <Link href={`/${data.category.id}/${data.id}`}>

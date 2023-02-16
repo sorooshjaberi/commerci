@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import CategoryData from "./CategoryData";
 import CategoryItems from "./CategoryItems";
 

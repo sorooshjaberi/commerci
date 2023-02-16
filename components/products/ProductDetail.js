@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import ProductSlider from "./slider/ProductSlider";

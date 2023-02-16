@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 import TabDetails from "../Tabs/TabDetails";
 import SideBar from "./SideBar";
 import { userAction } from "@/store/user";

@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import { Logout as MLogout } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
 import { signOut } from "next-auth/react";

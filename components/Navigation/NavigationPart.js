@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import Logo from "./Logo";
 import Box from '@mui/material/Box'
 import SearchBar from "./SearchBar";

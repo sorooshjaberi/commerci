@@ -1,7 +1,6 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Login from "./Login";
-import SignInForm from "./Login";
 import Signup from "./signup";
 
 const Sign = () => {

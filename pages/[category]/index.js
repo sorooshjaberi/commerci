@@ -1,6 +1,6 @@
 import CategoryLayout from "@/components/singleCategory/CategoryLayout";
 import { getOneCategoryProducts } from "@/lib/store-api-utils";
-import React from "react";
+ 
 
 const CategoryPage = ({data}) => {
   console.log(data);

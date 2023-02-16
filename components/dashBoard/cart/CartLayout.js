@@ -1,5 +1,5 @@
 import { Paper, Stack } from "@mui/material";
-import React from "react";
+ 
 import Accountant from "./Accountant";
 import CartItems from "./CartItems";
 import { Unstable_Grid2 as Grid2 } from "@mui/material";
