@@ -24,9 +24,6 @@ module.exports = (phase) =>{
 }else{
   return {
     images:imagesConfig , 
-    env:{
-      NEXTAUTH_SECRET:"AhIgspa1zpus/bTJtT49v4Il5XwcWh2vW1Hxp0mWxQc="
-    }
    }
 
 }
