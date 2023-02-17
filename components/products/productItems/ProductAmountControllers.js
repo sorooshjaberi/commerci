@@ -10,6 +10,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { userAction } from "@/store/user";
 const ProductAmountControllers = ({ data }) => {
+  
   const dispatch = useDispatch();
   const addHandler = () => {
     dispatch(userAction.cartIncrement(data.id));
@@ -18,7 +19,8 @@ const ProductAmountControllers = ({ data }) => {
     dispatch(userAction.cartDecrement(data.id));
   };
   const cartStore = useSelector((store) => store.user.cart);
-  const amount = cartStore.find((item) => item.id == data.id).amount;
+  console.log("product Item" , data);
+  const amount = cartStore.find((item) => item.id == data.id)?.amount;
   return (
     <Stack
       direction={"row"}
