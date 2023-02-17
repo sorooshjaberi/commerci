@@ -8,6 +8,7 @@ const TabDetails = ({user}) => {
 
   const uiStore = useSelector((store) => store.ui);
   const userStore = useSelector((store) => store.user);
+  console.log(user);
   return (
     <Paper sx={{ flex: "1" }}>
       <TabPanel index={0} value={+uiStore.dashboardTabIndex}>
@@ -21,7 +22,8 @@ const TabDetails = ({user}) => {
         {uiStore.dashboardTabIndex == 1 && <SavedItems user={user} data={userStore.saved} />}
       </TabPanel>
       <TabPanel index={2} value={+uiStore.dashboardTabIndex}>
-        <HistoryTable historyItems={userStore.userData.history} />
+        {uiStore.dashboardTabIndex == 2 && <HistoryTable   data={userStore.userData.history} />}
+        {/* <HistoryTable historyItems={userStore.userData.history} /> */}
       </TabPanel>
     </Paper>
   );

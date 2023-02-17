@@ -1,11 +1,11 @@
-import * as UiLink from "@mui/material/Link"
+import * as UiLink from "@mui/material/Link";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Link from "next/link";
-const HistoryTable = ({ historyItems }) => {
+const HistoryTable = ({ data: historyItems }) => {
   return (
     <Table
       sx={{
@@ -27,7 +27,7 @@ const HistoryTable = ({ historyItems }) => {
         </TableRow>
       </TableHead>
       <TableBody>
-        {historyItems.map((row) => (
+        {historyItems?.map((row) => (
           <TableRow
             key={row.name}
             sx={{ "&:last-child td, &:last-child th": { border: 0 } }}

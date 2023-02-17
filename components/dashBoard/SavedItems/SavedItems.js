@@ -8,8 +8,7 @@ import { useEffect } from "react";
 const SavedItems = ({ user, data }) => {
   console.log("user..", user);
   console.log("data..", data);
-  const userStore = useSelector((store) => store.user);
-  const isSavedFirstTime = userStore.firstTime.saved;
+  const isSavedFirstTime = useSelector((store) => store.user.firstTime.saved);
   console.log('isFirstTime' ,isSavedFirstTime);
   const dispatch = useDispatch();
   const [savedData, setSavedData] = useState([]);
