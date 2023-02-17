@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = { userData: {}, cart: [], saved: [], firstTime: true };
+const initialState = { userData: {}, cart: [], saved: [], firstTime: {user:true , saved:true , cart:true} };
 const userSlice = createSlice({
   initialState,
   name: "user",
@@ -31,8 +31,8 @@ const userSlice = createSlice({
     createSavedData(state, { payload }) {
       state.saved = state.saved.concat(payload);
     },
-    firstTimeDone(state) {
-      state.firstTime = true;
+    firstTimeDone(state,{payload}) {
+      state.firstTime[payload] = false;
     },
     cartIncrement(state, { payload: id }) {
       const item = state.cart.find((cartItem) => cartItem.id == id);
@@ -41,7 +41,7 @@ const userSlice = createSlice({
     cartDecrement(state, { payload: id }) {
       const item = state.cart.find((cartItem) => cartItem.id == id);
       item.amount--;
-      if (item.amount === 0) {
+      if (item.amount == 0) {
         const newAdded = state.cart.filter((item) => {
           return item.id != id;
         });
