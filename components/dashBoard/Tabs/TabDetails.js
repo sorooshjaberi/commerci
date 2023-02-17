@@ -17,7 +17,8 @@ const TabDetails = ({user}) => {
       </TabPanel>
       <TabPanel index={1} value={+uiStore.dashboardTabIndex}>
         {/* <SavedItems savedItems={userStore.saved} /> */}
-        <SavedItems user = {user} savedItems={userStore.saved} />
+        {/* <SavedItems user = {user} savedItems={userStore.saved} /> */}
+        {uiStore.dashboardTabIndex == 1 && <SavedItems user={user} data={userStore.saved} />}
       </TabPanel>
       <TabPanel index={2} value={+uiStore.dashboardTabIndex}>
         <HistoryTable historyItems={userStore.userData.history} />
