@@ -33,6 +33,7 @@ const authenticator = NextAuth({
   ],
   callbacks:{
 
-  }
+  },
+  secret:process.env.NEXTAUTH_SECRET
 });
 export default authenticator;
