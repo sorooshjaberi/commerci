@@ -2,15 +2,18 @@ import dynamic from "next/dynamic";
 import Paper from "@mui/material/Paper";
 import TabPanel from "./TabPanel";
 import { useSelector } from "react-redux";
-const SavedItems = dynamic(() => import("../SavedItems/SavedItems"), {
-  loading: <p>Loading lazy...</p>,
-});
-const CartLayout = dynamic(() => import("../cart/CartLayout"), {
-  loading: <p>Loading lazy...</p>,
-});
-const HistoryTable = dynamic(() => import("../HistoryTable"), {
-  loading: <p>Loading lazy...</p>,
-});
+import SavedItems from "../SavedItems/SavedItems";
+import HistoryTable from "../HistoryTable";
+import CartLayout from "../cart/CartLayout";
+// const SavedItems = dynamic(() => import("../SavedItems/SavedItems"), {
+//   loading: <p>Loading lazy...</p>,
+// });
+// const CartLayout = dynamic(() => import("../cart/CartLayout"), {
+//   loading: <p>Loading lazy...</p>,
+// });
+// const HistoryTable = dynamic(() => import("../HistoryTable"), {
+//   loading: <p>Loading lazy...</p>,
+// });
 
 const TabDetails = ({ user }) => {
   const uiStore = useSelector((store) => store.ui);
