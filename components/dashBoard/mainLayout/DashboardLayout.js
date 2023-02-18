@@ -5,8 +5,7 @@ import { userAction } from "@/store/user";
 import { uiAction } from "@/store/ui";
 import { useDispatch, useSelector } from "react-redux";
 import Stack from "@mui/material/Stack";
-import useSWR, { mutate } from "swr";
-import CustomizedSnackbars from "@/components/ui/Alert";
+import useSWR from "swr";
 
 const fetcher = (url) => {
   return fetch(url).then((res) => res.json());
@@ -26,8 +25,6 @@ const DashboadrLayout = () => {
     //if it's the first time after loading :
     const { name: firstName, lastName, wallet, history } = user.body;
     dispatch(userAction.setUserData({ firstName, lastName, wallet, history }));
-    // dispatch(userAction.createCartData(cartProducts));
-    // dispatch(userAction.createSavedData(savedProducts));
     dispatch(userAction.firstTimeDone('user'));
   }, []);
   if (isLoading) {

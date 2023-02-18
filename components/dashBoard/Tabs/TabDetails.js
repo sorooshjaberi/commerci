@@ -1,29 +1,37 @@
-import { Paper } from "@mui/material";
+import dynamic from "next/dynamic";
+import Paper from "@mui/material/Paper";
 import TabPanel from "./TabPanel";
 import { useSelector } from "react-redux";
-import SavedItems from "../SavedItems/SavedItems";
-import HistoryTable from "../HistoryTable";
-import CartLayout from "../cart/CartLayout";
-const TabDetails = ({user}) => {
+const SavedItems = dynamic(() => import("../SavedItems/SavedItems"), {
+  loading: <p>Loading lazy...</p>,
+});
+const CartLayout = dynamic(() => import("../cart/CartLayout"), {
+  loading: <p>Loading lazy...</p>,
+});
+const HistoryTable = dynamic(() => import("../HistoryTable"), {
+  loading: <p>Loading lazy...</p>,
+});
 
+const TabDetails = ({ user }) => {
   const uiStore = useSelector((store) => store.ui);
   const userStore = useSelector((store) => store.user);
   console.log(user);
   return (
     <Paper sx={{ flex: "1" }}>
       <TabPanel index={0} value={+uiStore.dashboardTabIndex}>
-        {/* <CartLayout data={userStore.cart} /> */}
-        {uiStore.dashboardTabIndex == 0 && <CartLayout user={user} data={userStore.cart} />}
-        {/* <CartLayout data={userStore.cart} index={0} /> */}
+        {uiStore.dashboardTabIndex == 0 && (
+          <CartLayout user={user} data={userStore.cart} />
+        )}
       </TabPanel>
       <TabPanel index={1} value={+uiStore.dashboardTabIndex}>
-        {/* <SavedItems savedItems={userStore.saved} /> */}
-        {/* <SavedItems user = {user} savedItems={userStore.saved} /> */}
-        {uiStore.dashboardTabIndex == 1 && <SavedItems user={user} data={userStore.saved} />}
+        {uiStore.dashboardTabIndex == 1 && (
+          <SavedItems user={user} data={userStore.saved} />
+        )}
       </TabPanel>
       <TabPanel index={2} value={+uiStore.dashboardTabIndex}>
-        {uiStore.dashboardTabIndex == 2 && <HistoryTable   data={userStore.userData.history} />}
-        {/* <HistoryTable historyItems={userStore.userData.history} /> */}
+        {uiStore.dashboardTabIndex == 2 && (
+          <HistoryTable data={userStore.userData.history} />
+        )}
       </TabPanel>
     </Paper>
   );
