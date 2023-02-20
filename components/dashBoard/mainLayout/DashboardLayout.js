@@ -13,20 +13,17 @@ const fetcher = (url) => {
 const DashboadrLayout = () => {
   const dispatch = useDispatch();
   const userStore = useSelector((store) => store.user);
-  const {
-    data: user,
-    isLoading,
-    error,
-  } = useSWR("api/products/getUserData", fetcher);
+  const { data: user, isLoading, error} = useSWR("api/products/getUserData", fetcher);
+  console.log(`log  => file: DashboardLayout.js:17  => data:`, user);
   
   useEffect(() => {
-    if(!user)return;
-    if (!userStore.firstTime.user) return;
+   if (!userStore.firstTime.user) return;
+   if(!user)return;
     //if it's the first time after loading :
     const { name: firstName, lastName, wallet, history } = user.body;
     dispatch(userAction.setUserData({ firstName, lastName, wallet, history }));
     dispatch(userAction.firstTimeDone('user'));
-  }, []);
+  }, [user]);
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -40,8 +37,8 @@ const DashboadrLayout = () => {
       direction="row"
       sx={{
         width: "100%",
-        height: "90vh",
-        py: "5rem",
+        height: "80vh",
+        py: "3rem",
         px: "15rem",
       }}
     >

@@ -1,4 +1,3 @@
- 
 import { useSelector, useDispatch } from "react-redux";
 import { uiAction } from "@/store/ui";
 import Box from "@mui/material/Box";
@@ -15,11 +14,20 @@ const Tabs = () => {
     <Box>
       <TabS
         orientation="vertical"
-        sx={{ borderRight: 1, borderColor: "divider" }}
+        sx={{
+          borderRight: 1,
+          borderColor: "divider",
+          "& > *": {
+            mb: 1,
+            "& *": {
+              fontSize: "2rem !important",
+            },
+          },
+        }}
         value={value}
         onChange={handleChange}
       >
-        <Tab label="Cart"     />
+        <Tab label="Cart" />
         <Tab label="Saved" />
         <Tab label="History" />
       </TabS>

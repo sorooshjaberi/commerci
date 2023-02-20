@@ -15,9 +15,6 @@ const SideBar = () => {
         position: "relative",
         p: 2,
         minWidth: "25rem",
-        "& *": {
-          fontSize: "2rem",
-        },
       }}
     >
       <Stack spacing={2} direction={"column"}>
