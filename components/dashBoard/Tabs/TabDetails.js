@@ -2,17 +2,15 @@ import dynamic from "next/dynamic";
 import Paper from "@mui/material/Paper";
 import TabPanel from "./TabPanel";
 import { useSelector } from "react-redux";
-// import SavedItems from "../SavedItems/SavedItems";
-// import HistoryTable from "../HistoryTable";
-// import CartLayout from "../cart/CartLayout";
+import Spinner from "@/components/ui/Spinner";
 const SavedItems = dynamic(() => import("../SavedItems/SavedItems"), {
-  loading: ()=> <p>Loading lazy...</p>,
+  loading: () => <Spinner />,
 });
 const CartLayout = dynamic(() => import("../cart/CartLayout"), {
-  loading: ()=> <p>Loading lazy...</p>,
+  loading: () => <Spinner />,
 });
 const HistoryTable = dynamic(() => import("../HistoryTable"), {
-  loading: ()=> <p>Loading lazy...</p>,
+  loading: () => <Spinner />,
 });
 
 const TabDetails = ({ user }) => {
