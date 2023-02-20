@@ -1,5 +1,4 @@
 import ProductItem from "../../products/productItems/ProductItem";
-import { Unstable_Grid2 as Grid } from "@mui/material";
 import Unstable_Grid2 from "@mui/material/Unstable_Grid2";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -41,9 +40,9 @@ const SavedItems = ({ user, data }) => {
   });
   
   return (
-    <Grid container spacing="10rem">
+    <Unstable_Grid2 container spacing={2}>
       {products}
-    </Grid>
+    </Unstable_Grid2>
   );
 };
 
