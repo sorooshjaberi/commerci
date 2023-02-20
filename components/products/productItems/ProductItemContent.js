@@ -18,6 +18,7 @@ const ProductItemContent = ({ data }) => {
           id="imagee"
           className="image"
           alt={data.title}
+          quality={40}
           style={{
             transition: "all ease .5s",
             height: "16rem",
