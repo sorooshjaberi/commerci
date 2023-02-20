@@ -11,8 +11,6 @@ const CartLayout = ({ data, user }) => {
   const isCartFirstTime = useSelector((store) => store.user.firstTime.cart);
   const dispatch = useDispatch();
   const [cartsData, setCartsData] = useState([]);
-  console.log("user", user.body.cart);
-  console.log("data", data);
   useEffect(() => {
     //if it's the first time cart is mounted, fetch products from the database
     if (isCartFirstTime) {

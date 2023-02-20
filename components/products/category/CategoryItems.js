@@ -4,7 +4,6 @@ import Stack from "@mui/material/Stack";
 
 const CategoryItems = ({ data }) => {
   const shortData = data.slice(0,6)
-  console.log(shortData);
   const items = shortData.map((item) => {
     return <ProductItem key={item.id} data={item} />;
   });

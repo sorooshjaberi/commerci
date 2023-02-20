@@ -3,7 +3,6 @@ import React from "react";
 import CategoryItem from "./categoryItem";
 
 const CategoryContainer = ({ categories }) => {
-  console.log(categories);
   const items = categories.map((category) => (
     <CategoryItem key={category.id} data={category} />
   ));

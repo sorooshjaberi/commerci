@@ -4,8 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const CategoryItem = ({ data }) => {
-  console.log(data.name);
-
   return (
       <Link href={`${data.id}`}>
     <Box display={'flex'} flexDirection="column" alignItems={'center'} justifyContent="space-between">

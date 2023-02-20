@@ -19,7 +19,6 @@ const ProductAmountControllers = ({ data }) => {
     dispatch(userAction.cartDecrement(data.id));
   };
   const cartStore = useSelector((store) => store.user.cart);
-  console.log("product Item" , data);
   const amount = cartStore.find((item) => item.id == data.id)?.amount;
   return (
     <Stack

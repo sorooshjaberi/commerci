@@ -6,14 +6,9 @@ import { useState } from "react";
 import { userAction } from "@/store/user";
 import { useEffect } from "react";
 const SavedItems = ({ user, data }) => {
-  console.log("user..", user);
-  console.log("data..", data);
   const isSavedFirstTime = useSelector((store) => store.user.firstTime.saved);
-  console.log('isFirstTime' ,isSavedFirstTime);
   const dispatch = useDispatch();
   const [savedData, setSavedData] = useState([]);
-  console.log("usersaved", user.body.saved);
-  console.log("data", data);
   useEffect(() => {
     //if it's the first time saved is mounted, fetch products from the database
     if (isSavedFirstTime) {
@@ -23,7 +18,6 @@ const SavedItems = ({ user, data }) => {
       })
         .then((res) => res.json())
         .then((res) => {
-          console.log("resp", res);
           setSavedData(res.savedItemsData);
           res && dispatch(userAction.createSavedData(res.savedItemsData));
           dispatch(userAction.firstTimeDone("saved"));
@@ -31,7 +25,6 @@ const SavedItems = ({ user, data }) => {
     }
     //else set the saved items regarding to redux
     else {
-      console.log("not first time", data);
       setSavedData(data);
     }
   }, [data]);
