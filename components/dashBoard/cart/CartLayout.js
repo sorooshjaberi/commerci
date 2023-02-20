@@ -7,10 +7,12 @@ import Unstable_Grid2 from "@mui/material/Unstable_Grid2";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { userAction } from "@/store/user";
+import Outage from "@/components/ui/Outage";
+import Spinner from "@/components/ui/Spinner";
 const CartLayout = ({ data, user }) => {
   const isCartFirstTime = useSelector((store) => store.user.firstTime.cart);
   const dispatch = useDispatch();
-  const [cartsData, setCartsData] = useState([]);
+  const [cartsData, setCartsData] = useState(null);
   useEffect(() => {
     //if it's the first time cart is mounted, fetch products from the database
     if (isCartFirstTime) {
@@ -30,6 +32,13 @@ const CartLayout = ({ data, user }) => {
       setCartsData(data);
     }
   }, [data]);
+  if(!cartsData){
+    return <Spinner/>
+  }
+  if(cartsData && cartsData.length==0){
+    console.log('empty');
+    // return <Outage>Your cart is empty</Outage>
+  }
 
   return (
     <Stack

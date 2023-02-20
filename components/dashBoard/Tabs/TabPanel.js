@@ -9,7 +9,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3, height: "100%", overflow: "scroll !important" }}>
+        <Box sx={{ p: 3, height: "100%", overflow: "scroll !important" , position:'relative'}}>
           {children}
         </Box>
       )}

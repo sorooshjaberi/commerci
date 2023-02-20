@@ -5,7 +5,13 @@ import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Link from "next/link";
+import AppsOutage from "@mui/icons-material/AppsOutage";
+import Outage from "../ui/Outage";
 const HistoryTable = ({ data: historyItems }) => {
+  if (historyItems.length === 0)
+    return (
+      <Outage/>
+    );
   return (
     <Table
       sx={{
