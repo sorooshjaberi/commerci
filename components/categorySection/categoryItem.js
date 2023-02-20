@@ -20,6 +20,7 @@ const CategoryItem = ({ data }) => {
             width={400}
             height={400}
             src={data.image}
+            alt='category'
           />
         </Paper>
         <Typography variant="h6" mt={2} color={"white"}>
