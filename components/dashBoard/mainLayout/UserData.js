@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const UserData = () => {
   // console.log(`log  => file: UserData.js:8  => data:`, data);
   const [userData, setUserData] = useState({});
-  const { firstName, lastName } = useSelector((store) => store.user.userData);
+  const { firstName, lastName ,wallet } = useSelector((store) => store.user.userData);
   const spaceBetweenFlex = {
     display: "flex",
     alignItems: "center",
@@ -17,7 +17,7 @@ const UserData = () => {
     if (!firstName) return;
     const abbr = (firstName.slice(0, 1) + lastName.slice(0, 1)).toUpperCase();
     console.log(`log  => file: UserData.js:16  => abbr:`, abbr);
-    setUserData({ firstName, lastName, abbr });
+    setUserData({ firstName, lastName, abbr  , wallet});
   }, [firstName]);
   return (
     <Box minHeight={"5rem"}>
@@ -39,7 +39,7 @@ const UserData = () => {
             <Typography textTransform={"capitalize"} mb={1} variant="h4">
               {`${userData.firstName} ${userData.lastName}`}
             </Typography>
-            <Typography variant="h6">$100</Typography>
+            <Typography variant="h6">${userData.wallet}</Typography>
           </Box>
         </Box>
       </Box>
