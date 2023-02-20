@@ -36,8 +36,7 @@ const CartLayout = ({ data, user }) => {
     return <Spinner/>
   }
   if(cartsData && cartsData.length==0){
-    console.log('empty');
-    // return <Outage>Your cart is empty</Outage>
+    return <Outage>Your cart is empty</Outage>
   }
 
   return (
