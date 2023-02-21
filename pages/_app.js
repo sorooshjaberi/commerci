@@ -9,11 +9,16 @@ import { Provider } from "react-redux";
 import store from "@/store/store";
 import { SessionProvider } from "next-auth/react";
 import CustomizedSnackbars from "@/components/ui/Alert";
+import Head from "next/head";
 
 const App = ({ Component, pageProps }) => {
   return (
     <SessionProvider>
       <Provider store={store}>
+        <Head>
+          <title>Commerci</title>
+          <link href="/public/Logo.png" rel='icon' />
+        </Head>
         <NavBar />
         <Component {...pageProps} />
         <CustomizedSnackbars />
