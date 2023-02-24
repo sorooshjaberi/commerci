@@ -1,4 +1,3 @@
- 
 import Image from "next/image";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -37,22 +36,7 @@ const Slides = ({ productDetail }) => {
     );
   });
   let imageSlides = images.map((image) => {
-    return (
-      <SwiperSlide key={Math.random()}>
-        {/* <Image
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-          key={productDetail.id}
-          alt={productDetail.title}
-          width={800}
-          height={800}
-          src={image}
-        /> */}
-        {image}
-      </SwiperSlide>
-    );
+    return <SwiperSlide key={Math.random()}>{image}</SwiperSlide>;
   });
   return {
     preveiw: imagesPreveiw,

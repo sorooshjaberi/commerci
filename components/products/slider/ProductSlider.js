@@ -1,15 +1,15 @@
 import "swiper/css";
-import Image from "next/image";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
- 
 import { Swiper } from "swiper/react";
+import ArrowForward from "@mui/icons-material/ArrowForward";
+import ArrowBack from "@mui/icons-material/ArrowBack";
 import Slides from "./slides";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Button } from "@mui/material";
 
 const ProductSlider = ({ productDetail }) => {
   const slides = Slides({ productDetail });
@@ -57,12 +57,13 @@ const ProductSlider = ({ productDetail }) => {
         style={{ margin: "auto", width: "100%" }}
         spaceBetween={1}
         slidesPerView={1}
-        // cssMode={true}
-        navigation={true}
+        cssMode={true}
+        navigation={{ nextEl: ".next", prevEl: ".prev" }}
         pagination={true}
         // mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        loop={true}
       >
         {slides.slides}
       </Swiper>
@@ -76,6 +77,14 @@ const ProductSlider = ({ productDetail }) => {
         }}
       >
         {slides.preveiw}
+      </Box>
+      <Box sx={{ mt: 1 }}>
+        <Button className="prev">
+          <ArrowBack />
+        </Button>
+        <Button className="next">
+          <ArrowForward />
+        </Button>
       </Box>
     </Box>
   );
