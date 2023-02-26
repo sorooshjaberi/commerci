@@ -55,6 +55,7 @@ const CategoryData = ({ data, imageUrl }) => {
         color="grey.300"
         textAlign={"center"}
         variant="h5"
+        fontFamily={'ABeeZee'}
       >
         <Link href={`${data.id}`}>See more &rArr;</Link>
       </Typography>
