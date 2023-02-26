@@ -5,7 +5,7 @@ const AllProducts = ({ products }) => {
     <Box
       sx={{
         bgcolor: "#fafafa",
-        pt: 5,
+        pt: 1,
         width: "100vw",
         px: 2,
       }}

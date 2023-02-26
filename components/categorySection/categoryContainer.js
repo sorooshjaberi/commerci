@@ -9,7 +9,7 @@ const CategoryContainer = ({ categories }) => {
   return (
     <Box
       p={2}
-      mt={2}
+      mt={0}
       height={"25rem"}
       bgcolor="primary.main"
       display={"flex"}

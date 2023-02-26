@@ -39,7 +39,7 @@ const ProductItemContent = ({ data }) => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5" textAlign={"center"} mb={3}>
+        <Typography variant="h5" textAlign={"center"} mb={1.5}>
           {data.title}
         </Typography>
         <Typography variant="h6" mb={1}>
