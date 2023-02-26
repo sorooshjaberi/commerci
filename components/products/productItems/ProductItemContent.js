@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import "@fontsource/abeezee"
 
 const ProductItemContent = ({ data }) => {
   return (
@@ -39,10 +40,10 @@ const ProductItemContent = ({ data }) => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5" textAlign={"center"} mb={1.5}>
+        <Typography variant="h5" textAlign={"center"} mb={1.5} fontFamily='ABeeZee'>
           {data.title}
         </Typography>
-        <Typography variant="h6" mb={1}>
+        <Typography variant="h5" fontWeight={'bold'} mb={1}>
           ${data.price}
         </Typography>
       </Box>

@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
+import "@fontsource/acme"
 
 const CategoryData = ({ data, imageUrl }) => {
   return (
@@ -18,9 +19,12 @@ const CategoryData = ({ data, imageUrl }) => {
       }}
     >
       <Typography
-        color="primary.contrastText"
+        color="#07c0ea"
         textAlign={"center"}
-        variant="h4"
+        component="h4"
+        fontFamily={'Acme'}  
+        fontWeight='bold'      
+        fontSize={'3rem'}
       >
         {data.name}
       </Typography>
@@ -45,7 +49,7 @@ const CategoryData = ({ data, imageUrl }) => {
       <Typography
         sx={{
           "&:hover": {
-            color: "white",
+            color: "#07c0ea",
           },
         }}
         color="grey.300"
