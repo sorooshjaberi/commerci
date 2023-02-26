@@ -5,6 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import searchHandler from "@/lib/searchHandler";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Typography } from "@mui/material";
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
@@ -24,6 +25,27 @@ const SearchBar = () => {
       clearTimeout(timeOut);
     };
   }, [searchValue]);
+  const searchIcon = (
+    <SearchIcon
+      sx={{
+        color: "action.active",
+        mr: 1,
+        my: 0.5,
+        fontSize: 40,
+        color: "rgba(255,0,130,1)",
+        opacity: ".5",
+        scale: "-1 1",
+        position: "relative",
+      }}
+    />
+  );
+  const Label = (
+    <Box sx={{ display: "flex", alignItems: "center", translate: "0 -1rem" }}>
+      {searchIcon}
+      <Typography fontSize={"2rem"}>Search</Typography>
+    </Box>
+  );
+
   return (
     <Box
       display={"flex"}
@@ -45,19 +67,7 @@ const SearchBar = () => {
         },
       }}
     >
-      <SearchIcon
-        sx={{
-          color: "action.active",
-          mr: 1,
-          my: 0.5,
-          fontSize: 40,
-          color: "##ffffff59",
-          opacity: ".5",
-          scale: "-1 1",
-          position: "relative",
-        }}
-      />
-
+      {/* {searchIcon} */}
       <Autocomplete
         freeSolo
         fullWidth
@@ -69,6 +79,9 @@ const SearchBar = () => {
         onInputChange={searchInputHandler}
         renderInput={(params) => (
           <TextField
+          sx={{
+            "& label" : {overflow:'visible'}
+          }}
             onBlur={(e) => {
               if (!e.target.value) {
                 router.push("/");
@@ -83,8 +96,8 @@ const SearchBar = () => {
               type: "search",
             }}
             fullWidth
-            label="Search"
-            variant="filled"
+            label={Label}
+            variant="standard"
           />
         )}
       />
