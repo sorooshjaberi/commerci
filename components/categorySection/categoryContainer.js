@@ -11,11 +11,14 @@ const CategoryContainer = ({ categories }) => {
       p={2}
       mt={0}
       height={"25rem"}
-      bgcolor="primary.main"
       display={"flex"}
       flexDirection="row"
       alignItems={"center"}
       justifyContent="space-evenly"
+      sx={{
+        backgroundColor:'#111',
+        background: ''
+      }}
     >
       {items}
     </Box>

@@ -137,3 +137,40 @@ html{
   top:50%;
   translate: -50% -50%;
 }
+body{
+  background-color: #111;
+}
+
+.categoryBox:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(14deg, #f8acff 7%, #696eff 100% );
+  transform: translate3d(0px, 6px, 0) scale(1.07);
+  filter: blur(28px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.categoryBox::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+      
