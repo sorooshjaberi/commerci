@@ -8,6 +8,7 @@ const ProductItem = ({ data, isCart }) => {
   return (
     <Card
       sx={{
+        bgcolor:'#ffffff10',
         position: "relative",
         minWidth: "22.4rem",
         height: isCart ? "34rem" : "28.8rem",
