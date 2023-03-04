@@ -19,7 +19,7 @@ const ProductItemContent = ({ data }) => {
           id="imagee"
           className="image"
           alt={data.title}
-          quality={40}
+          quality={20}
           style={{
             transition: "all ease .5s",
             height: "16rem",
@@ -28,8 +28,8 @@ const ProductItemContent = ({ data }) => {
             scale: "1.2",
           }}
           src={data.images[0]}
-          width={500}
-          height={500}
+          width={300}
+          height={300}
         />
       </Box>
       <Box

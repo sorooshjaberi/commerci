@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import { SwiperSlide } from "swiper/react";
 
 const Slides = ({ productDetail }) => {
@@ -15,6 +14,7 @@ const Slides = ({ productDetail }) => {
         alt={productDetail.title}
         width={300}
         height={300}
+        quality={50}
         src={imageUrl}
       />
     );

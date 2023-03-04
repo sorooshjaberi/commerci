@@ -25,8 +25,9 @@ const CategoryItem = ({ data }) => {
         >
           <Image
             style={{ width: "100%", height: "100%", marginBottom: "2rem" }}
-            width={400}
-            height={400}
+            width={200}
+            height={200}
+            quality={50}
             src={data.image}
             alt="category"
           />

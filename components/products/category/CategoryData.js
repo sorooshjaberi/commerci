@@ -41,9 +41,11 @@ const CategoryData = ({ data, imageUrl }) => {
           }}
           alt={data.name}
           src={imageUrl || data.image}
-          width={500}
-          height={500}
-        />
+          width={300}
+          height={300}
+          quality={50}
+          />
+          
       </Box>
 
       <Typography
