@@ -7,7 +7,9 @@ import MenuButton from "./MenuButton";
 import Menu from "./Menu";
 const NavBar = () => {
   const [isMenuOpen , setIsMenuOpen] = useState(false)
-  const isMedium = useMediaQuery("(min-width:900px)")
+  const isBig = useMediaQuery("(min-width:900px)")
+  const isSmall = useMediaQuery("(max-width:600px)")
+
   const toggleSideMenu =() => { setIsMenuOpen(perv=>!perv) }
   const appBarStyles = {
     backgroundColor: "#111",
@@ -21,10 +23,12 @@ const NavBar = () => {
   };
   return (
     <AppBar sx={appBarStyles}>
-      <NavigationPart />
-      {isMedium && <UserButtons />}
-      {isMenuOpen && <Menu toggleSideMenu={toggleSideMenu} />}
-      {!isMedium && <MenuButton toggleSideMenu={toggleSideMenu} isOpen = {isMenuOpen}/>}
+      <NavigationPart isSmall={isSmall}/>
+      {/* big */}
+      {isBig && <UserButtons />}
+      {/* not big */}
+      {!isBig && <MenuButton toggleSideMenu={toggleSideMenu} isOpen = {isMenuOpen}/>}
+      {isMenuOpen && <Menu toggleSideMenu={toggleSideMenu} isSmall={isSmall} />}
     </AppBar>
   );
 };

@@ -1,10 +1,10 @@
 import { Box, List, ListItem } from "@mui/material";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-
-import { useState } from "react";
 import Logout from "../dashBoard/mainLayout/Logout";
-const Menu = ({toggleSideMenu}) => {
+import SearchBar from "./SearchBar";
+const Menu = ({ toggleSideMenu, isSmall }) => {
+  console.log(`log  => file: Menu.js:7  => isSmall:`, isSmall);
   const { data } = useSession();
   const loggedInItems = [{ text: "dashboard", link: "/dashboard" }];
   const notLoggedInItems = [{ text: "login", link: "/sign-in" }];
@@ -42,6 +42,7 @@ const Menu = ({toggleSideMenu}) => {
             width: "70%",
             position: "absolute",
             right: "0",
+            p: "2rem",
             transition: "all .5s ease-in",
           }}
           onClick={(event) => {
@@ -52,13 +53,12 @@ const Menu = ({toggleSideMenu}) => {
             sx={{
               textAlign: "center",
               margin: "4rem auto",
-              height: "100%",
+              height: "auto",
             }}
           >
             <List
               sx={{
-                height: "100%",
-                p: "2rem",
+                maxHeight: "70%",
               }}
             >
               {menuItems.map((item) => {
@@ -70,10 +70,22 @@ const Menu = ({toggleSideMenu}) => {
               })}
             </List>
           </Box>
+          {isSmall && (
+            <Box
+              sx={{
+                margin: "auto",
+                "& > *": {
+                  margin: "auto",
+                  width: "100%",
+                },
+              }}
+            >
+              <SearchBar />
+            </Box>
+          )}
           <Box>
             {/* buttons */}
-            menuuuuuuuuuuuuuuu
-            {data && <Logout/>}
+            {data && <Logout />}
           </Box>
         </Box>
       </div>

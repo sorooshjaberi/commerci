@@ -1,8 +1,7 @@
- 
 import Logo from "./Logo";
-import Box from '@mui/material/Box'
+import Box from "@mui/material/Box";
 import SearchBar from "./SearchBar";
-const NavigationPart = () => {
+const NavigationPart = ({ isSmall }) => {
   return (
     <Box
       sx={{
@@ -10,14 +9,14 @@ const NavigationPart = () => {
         alignItems: "center",
         flexDirection: "row",
         width: {
-          md:"60%",
-          sm: "80%"
+          md: "60%",
+          sm: "80%",
         },
         justifyContent: "",
       }}
     >
       <Logo />
-      <SearchBar />
+      {!isSmall && <SearchBar />}
     </Box>
   );
 };
