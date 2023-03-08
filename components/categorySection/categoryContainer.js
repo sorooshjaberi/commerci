@@ -1,27 +1,33 @@
-import { Box } from "@mui/material";
+import { Box, Unstable_Grid2 as Grid } from "@mui/material";
 import React from "react";
 import CategoryItem from "./categoryItem";
 
 const CategoryContainer = ({ categories }) => {
   const items = categories.map((category) => (
-    <CategoryItem key={category.id} data={category} />
+    <Grid md={2} sm={4}>
+      <CategoryItem key={category.id} data={category} />
+    </Grid>
   ));
   return (
-    <Box
+    <Grid
+      container
+      columnSpacing={1}
+      rowSpacing={2}
       p={2}
       mt={0}
-      height={"25rem"}
+      minHeight={"25rem"}
       display={"flex"}
       flexDirection="row"
       alignItems={"center"}
       justifyContent="space-evenly"
+      flexWrap={"wrap"}
       sx={{
-        backgroundColor:'#111',
-        background: ''
+        backgroundColor: "#111",
+        background: "",
       }}
     >
       {items}
-    </Box>
+    </Grid>
   );
 };
 

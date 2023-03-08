@@ -1,7 +1,13 @@
 import AppBar from "@mui/material/AppBar";
 import UserButtons from "./UserPart";
 import NavigationPart from "./NavigationPart";
+import { useMediaQuery } from "@mui/material";
+import { useState } from "react";
+import MenuButton from "./MenuButton";
+import Menu from "./Menu";
 const NavBar = () => {
+  const [isMenuOpen , setIsMenuOpen] = useState(false)
+  const isMedium = useMediaQuery("(min-width:900px)")
   const appBarStyles = {
     backgroundColor: "#111",
     height: "9rem",
@@ -15,7 +21,9 @@ const NavBar = () => {
   return (
     <AppBar sx={appBarStyles}>
       <NavigationPart />
-      <UserButtons />
+      {isMedium && <UserButtons />}
+      {isMenuOpen && <Menu isOpen={isMenuOpen}/>}
+      {!isMedium && <MenuButton toggleSideMenu={() => { setIsMenuOpen(perv=>!perv) }} isOpen = {isMenuOpen}/>}
     </AppBar>
   );
 };

@@ -51,8 +51,8 @@ const SearchBar = () => {
       display={"flex"}
       alignItems="flex-end"
       width={"70%"}
-      ml="3rem"
       sx={{
+        ml: { md: "3rem", sm: "5rem" },
         "& label": {
           color: "#fff",
           fontSize: "2rem",
@@ -79,9 +79,9 @@ const SearchBar = () => {
         onInputChange={searchInputHandler}
         renderInput={(params) => (
           <TextField
-          sx={{
-            "& label" : {overflow:'visible'}
-          }}
+            sx={{
+              "& label": { overflow: "visible" },
+            }}
             onBlur={(e) => {
               if (!e.target.value) {
                 router.push("/");

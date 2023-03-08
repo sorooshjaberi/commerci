@@ -9,7 +9,10 @@ const NavigationPart = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
-        width: "60%",
+        width: {
+          md:"60%",
+          sm: "80%"
+        },
         justifyContent: "",
       }}
     >
