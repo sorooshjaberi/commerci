@@ -8,6 +8,7 @@ import Menu from "./Menu";
 const NavBar = () => {
   const [isMenuOpen , setIsMenuOpen] = useState(false)
   const isMedium = useMediaQuery("(min-width:900px)")
+  const toggleSideMenu =() => { setIsMenuOpen(perv=>!perv) }
   const appBarStyles = {
     backgroundColor: "#111",
     height: "9rem",
@@ -22,8 +23,8 @@ const NavBar = () => {
     <AppBar sx={appBarStyles}>
       <NavigationPart />
       {isMedium && <UserButtons />}
-      {isMenuOpen && <Menu isOpen={isMenuOpen}/>}
-      {!isMedium && <MenuButton toggleSideMenu={() => { setIsMenuOpen(perv=>!perv) }} isOpen = {isMenuOpen}/>}
+      {isMenuOpen && <Menu toggleSideMenu={toggleSideMenu} />}
+      {!isMedium && <MenuButton toggleSideMenu={toggleSideMenu} isOpen = {isMenuOpen}/>}
     </AppBar>
   );
 };
