@@ -12,14 +12,15 @@ const withPWA = require("next-pwa")({
       options: { cacheName: "cf" },
     },
     {
-      urlPattern: /js|jsx/,
+      urlPattern: /js|jsx|json/,
       handler: "StaleWhileRevalidate",
       options: { cacheName: "swt" },
     },
   ],
   fallbacks:{
     document:"/offline"
-  }
+  },
+  
 });
 const nextConfigs = {
   images: {
