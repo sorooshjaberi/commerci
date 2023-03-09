@@ -3,6 +3,7 @@ const withPWA = require("next-pwa")({
   dest: "public",
   skipWaiting: true,
   clientsClaim: true,
+  disable: process.env.NODE_ENV === "development",
   cacheOnFrontEndNav: true,
   // globPatterns:["/pages/**"],
   runtimeCaching: [
