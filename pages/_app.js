@@ -17,7 +17,6 @@ const App = ({ Component, pageProps }) => {
       <Provider store={store}>
         <Head>
           <title>Commerci</title>
-          <link href="/public/Logo.png" rel='icon' />
         </Head>
         <NavBar />
         <Component {...pageProps} />
