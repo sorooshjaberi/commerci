@@ -1,26 +1,25 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 const withPWA = require("next-pwa")({
   dest: "public",
   skipWaiting: true,
   clientsClaim: true,
   disable: process.env.NODE_ENV === "development",
-  cacheOnFrontEndNav: true,
-  // globPatterns:["/pages/**"],
-  runtimeCaching: [
-    {
-      urlPattern: /png|webp|jpg|jpeg|ico/,
-      handler: "CacheFirst",
-      options: { cacheName: "cf" },
-    },
-    {
-      urlPattern: /js|jsx|json/,
-      handler: "StaleWhileRevalidate",
-      options: { cacheName: "swt" },
-    },
-  ],
-  fallbacks:{
-    document:"/offline"
-  },
+  // cacheOnFrontEndNav: true,
+  // // globPatterns:["/pages/**"],
+  // runtimeCaching: [
+  //   {
+  //     urlPattern: /png|webp|jpg|jpeg|ico/,
+  //     handler: "CacheFirst",
+  //     options: { cacheName: "cf" },
+  //   },
+  //   {
+  //     urlPattern: /js|jsx|json/,
+  //     handler: "StaleWhileRevalidate",
+  //     options: { cacheName: "swt" },
+  //   },
+  // ],
+  // fallbacks:{
+  //   document:"/offline"
+  // },
   
 });
 const nextConfigs = {
