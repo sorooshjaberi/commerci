@@ -3,24 +3,10 @@ const withPWA = require("next-pwa")({
   skipWaiting: true,
   clientsClaim: true,
   disable: process.env.NODE_ENV === "development",
-  // cacheOnFrontEndNav: true,
-  // // globPatterns:["/pages/**"],
-  // runtimeCaching: [
-  //   {
-  //     urlPattern: /png|webp|jpg|jpeg|ico/,
-  //     handler: "CacheFirst",
-  //     options: { cacheName: "cf" },
-  //   },
-  //   {
-  //     urlPattern: /js|jsx|json/,
-  //     handler: "StaleWhileRevalidate",
-  //     options: { cacheName: "swt" },
-  //   },
-  // ],
-  // fallbacks:{
-  //   document:"/offline"
-  // },
-  
+  reloadOnOnline:false,
+  fallbacks:{
+    image:'/disconnected.png'
+  }  
 });
 const nextConfigs = {
   images: {
