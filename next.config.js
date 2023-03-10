@@ -6,7 +6,8 @@ const withPWA = require("next-pwa")({
   reloadOnOnline:false,
   fallbacks:{
     image:'/disconnected.png'
-  }  
+  },
+  cleanupOutdatedCaches:true
 });
 const nextConfigs = {
   images: {
@@ -27,31 +28,3 @@ const nextConfigs = {
   },
 };
 module.exports = withPWA(nextConfigs);
-
-// const nextConfigs = (phase) => {
-//   const imagesConfig = {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "api.lorem.space",
-//         port: "",
-//         pathname: "/image/**",
-//       },
-//       {
-//         protocol: "https",
-//         hostname: "**",
-//         port: "",
-//         pathname: "/**",
-//       },
-//     ],
-//   };
-//   if (phase === PHASE_DEVELOPMENT_SERVER) {
-//     return {
-//       images: imagesConfig,
-//     };
-//   } else {
-//     return {
-//       images: imagesConfig,
-//     };
-//   }
-// };
