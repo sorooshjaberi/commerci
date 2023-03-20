@@ -4,8 +4,8 @@ const Spinner = () => {
     <ClipLoader
       size={100}
       cssOverride={{
-        position: "fixed",
-        top: "50%",
+        position: "absolute",
+        top: "30%",
         left: "50%",
         translate: "-50%  -50%",
       }}

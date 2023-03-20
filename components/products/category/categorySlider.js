@@ -2,7 +2,10 @@ import CategoryData from "./CategoryData";
 import CategoryItems from "./CategoryItems";
 
 import Stack from "@mui/material/Stack";
+import Spinner from "@/components/ui/Spinner";
 const CategorySlider = ({ categoryItems: data, imageUrl }) => {
+  if(!data)
+  return <Spinner/>
   return (
     <Stack
       direction="row"

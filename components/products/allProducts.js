@@ -1,14 +1,16 @@
 import Box from "@mui/material/Box";
+import Spinner from "../ui/Spinner";
 import CategorySlider from "./category/categorySlider";
-const AllProducts = ({ products }) => {
+const AllProducts = ({ products = [] }) => {
   return (
     <Box
-      sx={{
-        bgcolor: "#111",
-        pt: 1,
-        width: "100vw",
-        px: 2,
-      }}
+    sx={{
+      bgcolor: "#111",
+      pt: 1,
+      width: "100vw",
+      px: 2,
+      position:"relative"
+    }}
     >
       <CategorySlider categoryItems={products[0]} imageUrl="/clothes.webp" />
       <CategorySlider
