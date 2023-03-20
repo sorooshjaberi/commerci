@@ -18,7 +18,7 @@ const DashboadrLayout = () => {
     data: user,
     isLoading,
     error,
-  } = useSWR("api/products/getUserData", fetcher);
+  } = useSWR("/api/products/getUserData", fetcher);
   useEffect(() => {
     if (!userStore.firstTime.user) return;
     if (!user) return;

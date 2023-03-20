@@ -13,7 +13,6 @@ const HomePage = (props) => {
     fetchDatasByCat
   );
   console.log(data);
-
   return (
     <div id="home" style={{ width: "100vw" }}>
       <CategoryContainer categories={props.categories} />
