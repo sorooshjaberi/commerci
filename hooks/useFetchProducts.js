@@ -8,17 +8,25 @@ const datas = [];
 
 const useFetchProducts = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    Promise.all([
-      fetchCategory(defaultUrl + "1"),
-      fetchCategory(defaultUrl + "2"),
-      fetchCategory(defaultUrl + "3"),
-      fetchCategory(defaultUrl + "4"),
-      fetchCategory(defaultUrl + "5"),
-    ]).then(() => {
-      setProducts(datas);
-    });
+    const ss = sessionStorage.getItem("products");
+    if (ss) {
+      setProducts(JSON.parse(ss));
+    } else {
+      Promise.all([
+        fetchCategory(defaultUrl + "1"),
+        fetchCategory(defaultUrl + "2"),
+        fetchCategory(defaultUrl + "3"),
+        fetchCategory(defaultUrl + "4"),
+        fetchCategory(defaultUrl + "5"),
+      ]).then(() => {
+        setProducts(datas);
+        sessionStorage.setItem("products", JSON.stringify(datas));
+      });
+    }
   }, []);
+
   return products;
 };
 export default useFetchProducts;

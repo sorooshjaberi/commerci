@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
   }
 }
 export async function getStaticPaths() {
- const paths = Array(5).fill(0).map((e,i)=>i+1).map(e=>({params:{category:e.toString()}}))
+//  const paths = Array(5).fill(0).map((e,i)=>i+1).map(e=>({params:{category:e.toString()}}))
   return {
     paths :[] ,
     fallback: 'blocking',

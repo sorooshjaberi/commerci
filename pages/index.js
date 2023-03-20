@@ -15,6 +15,7 @@ const HomePage = (props) => {
   // );
   const data = useFetchProducts();
   console.log(data);
+ 
   return (
     <div id="home" style={{ width: "100vw" }}>
       <CategoryContainer categories={props.categories} />
