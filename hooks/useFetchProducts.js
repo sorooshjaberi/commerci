@@ -25,7 +25,7 @@ const useFetchProducts = () => {
     const ss = sessionStorage.getItem("products");
     if (ss) {
       setProducts(JSON.parse(ss));
-    } else {
+    } 
       dataPusher("1");
       dataPusher("2");
       dataPusher("3");
@@ -41,7 +41,7 @@ const useFetchProducts = () => {
       //   setProducts(datas);
       //   sessionStorage.setItem("products", JSON.stringify(datas));
       // });
-    }
+    
   }, []);
 
   return products;
