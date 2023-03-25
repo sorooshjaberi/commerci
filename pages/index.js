@@ -14,7 +14,6 @@ const HomePage = (props) => {
   //   fetchDatasByCat
   // );
   const data = useFetchProducts();
-  console.log(data);
  
   return (
     <div id="home" style={{ width: "100vw" }}>

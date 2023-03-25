@@ -13,7 +13,6 @@ const useFetchProducts = () => {
 
   const dataPusher = async (url) => {
     const data = await fetchCategory(defaultUrl + url);
-    console.log(data);
     setProducts((prev) => [...prev, data]);
     const prevSessionStorage = sessionStorage.getItem("products") || "[]";
     const prevSessionStorageJs = JSON.parse(prevSessionStorage);

@@ -2,7 +2,6 @@ import { getProductsByCategory } from "@/lib/store-api-utils";
 import ProductDetail from "@/components/products/ProductDetail";
 import Spinner from "@/components/ui/Spinner";
 const ProductItem = ({ productDetail }) => {
-  console.log(productDetail);
   if (!productDetail) {
     return <Spinner />;
   }

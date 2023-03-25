@@ -16,7 +16,6 @@ const UserData = () => {
   useEffect(() => {
     if (!firstName) return;
     const abbr = (firstName.slice(0, 1) + lastName.slice(0, 1)).toUpperCase();
-    console.log(`log  => file: UserData.js:16  => abbr:`, abbr);
     setUserData({ firstName, lastName, abbr  , wallet});
   }, [firstName]);
   return (

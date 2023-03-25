@@ -10,8 +10,6 @@ const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
   const searchInputHandler = (event, value) => {
-    console.log(`log  => file: SearchBar.js:12  => event:`, event);
-    console.log(`log  => file: SearchBar.js:12  => value:`, value);
     setSearchValue(value);
   };
   useEffect(() => {
@@ -45,7 +43,6 @@ const SearchBar = () => {
       <Typography fontSize={"2rem"}>Search</Typography>
     </Box>
   );
-
   return (
     <Box
       display={"flex"}
@@ -84,10 +81,9 @@ const SearchBar = () => {
             }}
             onBlur={(e) => {
               if (!e.target.value) {
-                router.push("/");
+                if (router.pathname === "/search") router.back();
               } else {
                 searchInputHandler(e);
-                console.log(5);
               }
             }}
             {...params}

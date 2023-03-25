@@ -4,7 +4,6 @@ import Link from "next/link";
 import Logout from "../dashBoard/mainLayout/Logout";
 import SearchBar from "./SearchBar";
 const Menu = ({ toggleSideMenu, isSmall }) => {
-  console.log(`log  => file: Menu.js:7  => isSmall:`, isSmall);
   const { data } = useSession();
   const loggedInItems = [{ text: "dashboard", link: "/dashboard" }];
   const notLoggedInItems = [{ text: "login", link: "/sign-in" }];
