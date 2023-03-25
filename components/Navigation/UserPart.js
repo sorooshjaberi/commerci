@@ -6,7 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import Link from "next/link";
 import { uiAction } from "@/store/ui";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useSession } from "next-auth/react";
 
 const UserButtons = () => {
@@ -25,21 +25,21 @@ const UserButtons = () => {
   };
   const enteringButton = LoggedIn ? (
     <>
-      <Link href={"/dashboard"}>
+      {/* <Link href={"/dashboard"}>
         <Paper sx={{ p: 1, cursor: "pointer",...buttonStyle }}>
           <PersonIcon sx={{ color: "white", fontSize: "5rem" }} />
         </Paper>
-      </Link>
-      <Divider
-        orientation="vertical"
+      </Link> */}
+      {/* <Divider */}
+        {/* orientation="vertical"
         sx={{ width: "auto", height: "auto", borderColor: "white" }}
-      />
+      /> */}
       <Link href={"/dashboard"}>
         <Paper
           onClick={openCart}
-          sx={{ p: 1, cursor: "pointer"  , ...buttonStyle}}
+          sx={{ p: 1, cursor: "pointer"  , ...buttonStyle  , height:'5rem'}}
         >
-          <ShoppingCartIcon sx={{ color: "white", fontSize: "5rem" }} />
+          <ShoppingCartIcon sx={{ color: "white", fontSize: "4rem" }} />
         </Paper>
       </Link>
     </>

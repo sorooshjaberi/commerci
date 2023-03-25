@@ -85,7 +85,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 
@@ -173,4 +173,8 @@ body{
   background: inherit;
   border-radius: inherit;
 }
-      
+@media (max-width:900px) {
+  html{
+    font-size: 8px;
+  }
+}

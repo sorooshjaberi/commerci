@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import { SwiperSlide } from "swiper/react";
 
 const Slides = ({ productDetail }) => {
-  const images = productDetail.images.map((imageUrl) => {
+  const images = productDetail.images?.map((imageUrl) => {
     return (
       <Image
         style={{
@@ -19,7 +19,7 @@ const Slides = ({ productDetail }) => {
       />
     );
   });
-  const imagesPreveiw = images.map((image) => {
+  const imagesPreveiw = images?.map((image) => {
     return (
       <Paper
         key={Math.random()}

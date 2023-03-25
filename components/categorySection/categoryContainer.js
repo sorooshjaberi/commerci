@@ -3,8 +3,8 @@ import React from "react";
 import CategoryItem from "./categoryItem";
 
 const CategoryContainer = ({ categories }) => {
-  const items = categories.map((category) => (
-    <Grid md={2} sm={4}>
+  const items = categories.map((category,i) => (
+    <Grid key={i} md={2} sm={4}>
       <CategoryItem key={category.id} data={category} />
     </Grid>
   ));

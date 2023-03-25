@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 const SignButton = () => {
     const paperStyle = {
-        height: "6rem",
+        height: "5rem",
         minWidth: "9rem",
         borderRadius: 4,
         bgcolor: "transparent",

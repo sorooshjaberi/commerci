@@ -23,8 +23,8 @@ const Login = ({ hideLogin }) => {
   };
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: "test@abc.xyz",
+      password: "12345678",
     },
     onSubmit: (values) => {
       loginHandler(values)
@@ -35,7 +35,7 @@ const Login = ({ hideLogin }) => {
               context: "Logged in successfully",
             })
           );
-          router.push("/");
+          router.push("/dashboard");
         })
         .catch((err) => {
           dispatch(
@@ -59,12 +59,14 @@ const Login = ({ hideLogin }) => {
           formik={formik}
           title={"Email Address"}
           type="email"
+          value={'test@xyz.com'}
         />
         <FormGroup
           styles={styles}
           formik={formik}
           title={"Password"}
           type="password"
+          value={12345678}
         />
 
         <Button

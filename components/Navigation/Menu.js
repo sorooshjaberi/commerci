@@ -61,9 +61,9 @@ const Menu = ({ toggleSideMenu, isSmall }) => {
                 maxHeight: "70%",
               }}
             >
-              {menuItems.map((item) => {
+              {menuItems.map((item,i) => {
                 return (
-                  <Link href={item.link}>
+                  <Link key={i} href={item.link}>
                     <ListItem sx={listItemStyle}>{item.text}</ListItem>
                   </Link>
                 );
