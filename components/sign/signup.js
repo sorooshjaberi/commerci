@@ -1,11 +1,10 @@
- 
 import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Stack from '@mui/material/Stack'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
-import Link from '@mui/material/Link'
+import Stack from "@mui/material/Stack";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 
 import FormGroup from "./FormGroup";
 import {
@@ -31,6 +30,7 @@ const Signup = ({ showLogin }) => {
     onSubmit: (values) => {
       createAccount(values)
         .then((_) => {
+          showLogin();
           dispatch(
             uiAction.changeAlert({
               type: "success",
