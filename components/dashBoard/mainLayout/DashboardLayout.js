@@ -23,7 +23,8 @@ const DashboadrLayout = () => {
     if (!userStore.firstTime.user) return;
     if (!user) return;
     //if it's the first time after loading :
-    const { name: firstName, lastName, wallet, history } = user.body;
+    console.log(user);
+    const { name: firstName, lastName, wallet, history } = user?.body;
     dispatch(userAction.setUserData({ firstName, lastName, wallet, history }));
     dispatch(userAction.firstTimeDone("user"));
   }, [user]);

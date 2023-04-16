@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api/**/*.js": {
+      "memory": 512,
+      "timeout": 20,
+      "env": {
+        "NEXT_PUBLIC_SECRET": "@my-secret"
+      }
+    }
+  }
+}
